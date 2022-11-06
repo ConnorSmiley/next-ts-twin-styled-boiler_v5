@@ -3,18 +3,18 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 
-const HeaderBg = styled.div`
+const NavbarBG = styled.div`
   ${tw`
     w-screen
     h-20
     bg-black
-    opacity-80
     `}
 `;
 
-const HeaderStyle = styled.div`
+const NavbarStyle = styled.div`
   ${tw`
     w-full
     h-full
@@ -23,7 +23,7 @@ const HeaderStyle = styled.div`
     `}
 `;
 
-const HeaderText = styled.div`
+const NavbarText = styled.div`
   ${tw`
   flex
   w-auto
@@ -34,16 +34,19 @@ const HeaderText = styled.div`
   uppercase
   text-xl
   items-center
+  
+ hidden lg:flex
     `}
 `;
 
-const Header: NextPage = () => {
+const Navbar: NextPage = () => {
 
   return (
     <>
-      <HeaderBg>
-        <HeaderStyle>
-          <HeaderText>
+      <NavbarBG>
+        <NavbarStyle>
+          <HamburgerMenu />
+          <NavbarText>
             <Link href="/">
               Home
             </Link>
@@ -62,11 +65,11 @@ const Header: NextPage = () => {
             <Link href="/About">
               about
             </Link>
-          </HeaderText>
-        </HeaderStyle>
-      </HeaderBg>
+          </NavbarText>
+        </NavbarStyle>
+      </NavbarBG>
     </>
   );
 };
 
-export default Header;
+export default Navbar;

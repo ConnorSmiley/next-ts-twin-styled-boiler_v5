@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 const DesignContainer = styled.div`
     ${tw`
     w-screen
     h-screen
     bg-gradient-to-r from-pink-500 to-purple-900
-    
+       overflow-hidden
+ 
     `}
 `
 
@@ -23,7 +24,7 @@ function Design () {
     <>
         <DesignContainer>
             <DesignStyle>
-                <Header />
+                <Navbar />
 
             </DesignStyle>
         </DesignContainer>

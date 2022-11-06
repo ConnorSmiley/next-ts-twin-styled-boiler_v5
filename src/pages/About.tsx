@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 
 const AboutContainer = styled.div`
@@ -9,7 +9,7 @@ const AboutContainer = styled.div`
        w-screen
     h-screen
     bg-gradient-to-r from-pink-500 to-purple-900
- 
+    overflow-hidden 
     `}
 `
 
@@ -24,7 +24,7 @@ export default function About () {
     <>
         <AboutContainer>
             <AboutStyle>
-                <Header />
+                <Navbar />
 
             </AboutStyle>
         </AboutContainer>
