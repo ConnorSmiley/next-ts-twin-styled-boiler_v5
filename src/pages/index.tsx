@@ -8,7 +8,8 @@ const HomeContainer = styled.div`
   ${tw`
     w-screen
     h-screen
-    bg-black
+    bg-gradient-to-r from-pink-500 to-purple-900
+
     `}
 `;
 
@@ -28,9 +29,7 @@ const IndexPage: NextPage = () => {
     <>
       <HomeContainer>
         <HomeStyles>
-          <Header>
-
-          </Header>
+          <Header />
         </HomeStyles>
       </HomeContainer>
     </>
