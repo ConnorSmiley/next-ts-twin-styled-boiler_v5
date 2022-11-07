@@ -20,7 +20,6 @@ const HomeStyles = styled.div`
   w-full
   h-full
   flex
-  
     
     `}
 `;
