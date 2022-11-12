@@ -24,6 +24,9 @@ const HomeStyles = styled.div`
     `}
 `;
 
+
+
+
 const IndexPage: NextPage = () => {
 
   return (

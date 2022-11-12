@@ -7,7 +7,6 @@ import Link from "next/link";
 
 
 const HamburgerMenuContainer = styled.div`
-  min-width: 320px;
   ${tw`
     h-full
     lg:hidden flex
@@ -19,6 +18,7 @@ const HamburgerMenuStyle = styled.div`
   ${tw`
     right-4
     top-2
+    overflow-hidden
     `}
 `;
 

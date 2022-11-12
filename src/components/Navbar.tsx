@@ -11,12 +11,14 @@ const NavbarBG = styled.div`
     w-screen
     h-20
     bg-black
+    absolute
+    top-0
     `}
 `;
 
 const NavbarStyle = styled.div`
   ${tw`
-    w-full
+    w-screen
     h-full
     pl-[50%]
     pr-[1%]
@@ -32,10 +34,16 @@ const NavbarText = styled.div`
   text-white
   font-bold
   uppercase
-  text-xl
+  text-2xl
   items-center
   
  hidden lg:flex
+    `}
+`;
+
+const HoverStyle = styled.div`
+  ${tw`
+  hover:text-blue-500
     `}
 `;
 
@@ -47,24 +55,36 @@ const Navbar: NextPage = () => {
         <NavbarStyle>
           <HamburgerMenu />
           <NavbarText>
-            <Link href="/">
-              Home
-            </Link>
-            <Link href="/Design/">
-              Design
-            </Link>
-            <Link href="/Coding">
-              Coding
-            </Link>
-            <Link href="/Cloud">
-              cloud
-            </Link>
-            <Link href="/Photos">
-              Photos
-            </Link>
-            <Link href="/About">
-              about
-            </Link>
+            <HoverStyle>
+              <Link href="/">
+                Home
+              </Link>
+            </HoverStyle>
+            <HoverStyle>
+              <Link href="/Design/">
+                Design
+              </Link>
+            </HoverStyle>
+            <HoverStyle>
+              <Link href="/Coding">
+                Coding
+              </Link>
+            </HoverStyle>
+            <HoverStyle>
+              <Link href="/Cloud">
+                cloud
+              </Link>
+            </HoverStyle>
+            <HoverStyle>
+              <Link href="/Photos">
+                Photos
+              </Link>
+            </HoverStyle>
+            <HoverStyle>
+              <Link href="/About">
+                about
+              </Link>
+            </HoverStyle>
           </NavbarText>
         </NavbarStyle>
       </NavbarBG>
