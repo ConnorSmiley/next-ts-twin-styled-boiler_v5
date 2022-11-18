@@ -9,7 +9,6 @@ const HomeContainer = styled.div`
     w-screen
     h-screen
     bg-gradient-to-r from-pink-500 to-purple-900
-    relative
     overflow-hidden
 
     `}
@@ -19,7 +18,13 @@ const HomeStyles = styled.div`
   ${tw`
   w-full
   h-full
-  flex
+    pt-14
+    flex
+    items-center
+    justify-center
+    text-6xl
+    uppercase
+    font-extrabold
     
     `}
 `;
@@ -34,6 +39,7 @@ const IndexPage: NextPage = () => {
       <HomeContainer>
         <HomeStyles>
           <Navbar />
+          home
         </HomeStyles>
       </HomeContainer>
     </>
