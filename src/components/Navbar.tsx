@@ -9,10 +9,12 @@ import HamburgerMenu from "@/components/HamburgerMenu";
 const NavbarBG = styled.div`
   ${tw`
     w-screen
-    h-20
+    h-16
     bg-black
     absolute
     top-0
+    
+    sm:h-20
     `}
 `;
 

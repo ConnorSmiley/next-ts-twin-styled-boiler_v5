@@ -26,13 +26,13 @@ const HamburgerMenuStyle = styled.div`
 const FaBarsIcon = styled(FaBars)`
   ${tw`
   absolute
-  w-14
-  h-14
+  w-10
+  h-10
     z-50
     text-white
     fill-current
     right-4
-    top-2
+    top-3
     `}
 `;
 
@@ -41,11 +41,11 @@ const CgCloseOIcon = styled(CgCloseO)`
   absolute
     fill-current
     text-white
-    h-16
-    w-16
+    h-10
+    w-10
     z-50
     right-4
-    top-2
+    top-4
     `}
 `;
 
@@ -66,7 +66,7 @@ const HamburgerList = styled.div`
    justify-evenly
    text-white
    text-3xl
-   pb-40
+   pb-[20%]
    pt-[20%]
    z-10
    hover:text-red-500
