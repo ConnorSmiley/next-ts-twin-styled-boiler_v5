@@ -65,12 +65,11 @@ const HamburgerList = styled.div`
    items-center
    justify-evenly
    text-white
-   text-xl
+   text-3xl
    pb-40
-   pt-10
+   pt-[20%]
    z-10
    hover:text-red-500
-
    
    sm:text-5xl
    sm:pb-40
@@ -89,13 +88,10 @@ const HamburgerList = styled.div`
 
 const HamburgerText = styled.div`
     ${tw`
-    
     `}
 `
 
-
 export interface IHamburgerMenuProps {
-
 }
 
 const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
@@ -112,7 +108,6 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
           onClick={openClose}
         >
           {open ? <CgCloseOIcon /> : <FaBarsIcon />}
-
           {open && (
             <HamburgerList>
               <Link href="/">
@@ -135,8 +130,6 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
               </Link>
             </HamburgerList>)
           }
-
-
         </HamburgerMenuStyle>
       </HamburgerMenuContainer>
     </>
