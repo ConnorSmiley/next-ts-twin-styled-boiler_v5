@@ -26,24 +26,19 @@ const DesignStyle = styled.div`
 `;
 
 const Grid = styled.div`
+  display: grid;
+  grid-area: 1 / 1 / span 2 / span 2;
+  gap: 2rem;
   ${tw`
-    grid
-    grid-cols-2
-    gap-4
-    mx-auto    
+    
     `}
 `;
 
 const Thumbnail = styled.div`
   ${tw`
     bg-black
-    w-full
-    h-full
-    flex
-    justify-center
-    items-center
-    p-32
-    
+    w-20
+    h-20
     
     `}
 `;
