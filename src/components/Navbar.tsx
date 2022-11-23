@@ -22,7 +22,7 @@ const NavbarStyle = styled.div`
   ${tw`
     w-screen
     h-full
-    pl-[50%]
+    pl-[45%]
     pr-[1%]
     `}
 `;
@@ -36,7 +36,7 @@ const NavbarText = styled.div`
   text-white
   font-bold
   uppercase
-  text-2xl
+  text-xl
   items-center
   
  hidden lg:flex

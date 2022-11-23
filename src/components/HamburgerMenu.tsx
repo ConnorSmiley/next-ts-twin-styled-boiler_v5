@@ -65,23 +65,25 @@ const HamburgerList = styled.div`
    items-center
    justify-evenly
    text-white
-   text-3xl
-   pb-[20%]
+   text-4xl
+   pb-[40%]
    pt-[20%]
    z-10
    hover:text-red-500
    
-   sm:text-5xl
-   sm:pb-40
-   sm:pt-20
+   sm:text-4xl
+   sm:pb-[20%]
+   sm:pt-[10%]
    sm:font-extrabold
    sm:hover:text-blue-500
    
-   md:text-6xl
-   md:pb-40
-   md:pt-20
+   md:text-5xl
+   md:pb-[20%]
+   md:pt-[10%]
    md:font-extrabold
    md:hover:text-green-500
+   
+   lg:text-2xl
 
     `}
 `;
