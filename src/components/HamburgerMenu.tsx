@@ -50,7 +50,7 @@ const CgCloseOIcon = styled(CgCloseO)`
 `;
 
 
-const HamburgerList = styled.div`
+const HamburgerList = styled.div` 
   ${tw`
   bg-black
    h-screen
