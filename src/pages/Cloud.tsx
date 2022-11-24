@@ -16,6 +16,9 @@ const CloudContainer = styled.div`
 
 const CloudStyle = styled.div`
     ${tw`
+    pt-20
+    flex
+    
     
     `}
 `
@@ -27,6 +30,7 @@ export default function Cloud () {
             <CloudStyle>
                 <Navbar />
 
+                adjfldjf
             </CloudStyle>
         </CloudContainer>
     </>
