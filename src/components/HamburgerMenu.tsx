@@ -88,10 +88,6 @@ const HamburgerList = styled.div`
     `}
 `;
 
-const HamburgerText = styled.div`
-    ${tw`
-    `}
-`
 
 export interface IHamburgerMenuProps {
 }
@@ -122,7 +118,7 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
                 Coding
               </Link>
               <Link href="/Cloud">
-                cloud
+                .I.T. & cloud
               </Link>
               <Link href="/Photos">
                 Photos

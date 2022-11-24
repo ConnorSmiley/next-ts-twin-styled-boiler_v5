@@ -74,7 +74,7 @@ const Navbar: NextPage = () => {
             </HoverStyle>
             <HoverStyle>
               <Link href="/Cloud">
-                cloud
+                I.T. && cloud
               </Link>
             </HoverStyle>
             <HoverStyle>

@@ -26,20 +26,32 @@ const DesignStyle = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-area: 1 / 1 / span 2 / span 2;
-  gap: 2rem;
   ${tw`
+  grid
+  place-items-center
+  min-h-screen
+  z-50
+    
+    `}
+`;
+
+const Grid2 = styled.div`
+  ${tw`
+  grid
+  gap-2
+  grid-cols-2
+  bg-green-500
+  z-50
     
     `}
 `;
 
 const Thumbnail = styled.div`
+  aspect-ratio: 1 / 1;
   ${tw`
     bg-black
-    w-20
-    h-20
-    
+    w-auto
+    h-auto
     `}
 `;
 
@@ -47,15 +59,17 @@ function Design() {
   return (
     <>
       <DesignContainer>
+        <Navbar />
         <DesignStyle>
-          <Navbar />
           <Grid>
-            <Thumbnail />
-            <Thumbnail />
-            <Thumbnail />
-            <Thumbnail />
-            <Thumbnail />
-            <Thumbnail />
+            <Grid2>
+              <Thumbnail />
+              <Thumbnail />
+              <Thumbnail />
+              <Thumbnail />
+              <Thumbnail />
+              <Thumbnail />
+            </Grid2>
           </Grid>
         </DesignStyle>
       </DesignContainer>
