@@ -26,7 +26,6 @@ const Header = styled.div`
     `}
 `
 
-
 export default function ContentComponent () {
     return (
     <>
