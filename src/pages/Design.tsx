@@ -15,22 +15,23 @@ const DesignContainer = styled.div`
 
 const DesignStyle = styled.div`
   ${tw`
-    w-full
-    h-full
-    pt-20
-    flex
-    justify-center
-    items-center
+  w-full
+  h-full
+  pt-20
  
     `}
 `;
 
 const Grid = styled.div`
   ${tw`
+  flex
+  justify-center
+  items-center
   grid
   place-items-center
   min-h-screen
-  z-50
+  bg-black
+  opacity-[50%]
     
     `}
 `;
@@ -40,7 +41,6 @@ const Grid2 = styled.div`
   grid
   gap-2
   grid-cols-2
-  bg-green-500
   z-50
     
     `}
