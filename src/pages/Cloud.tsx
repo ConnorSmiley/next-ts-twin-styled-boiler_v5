@@ -22,10 +22,10 @@ const DarkBackground = styled.div`
     bg-black
     opacity-50
     h-full
-    w-[95%]
+    w-[98%]
     flex
     justify-center
- 
+    items-center
     `}
 `;
 
@@ -33,7 +33,7 @@ const CloudStyle = styled.div`
   ${tw`
   w-full
   h-full
-  m-2
+  m-5
     
     `}
 `;

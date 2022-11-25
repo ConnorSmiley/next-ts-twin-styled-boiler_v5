@@ -15,8 +15,13 @@ const ContentComponentStyle = styled.div`
     w-full
     h-full
     grid
-    grid-cols-2
     gap-4
+    
+    sm:grid-cols-2
+
+    lg:grid-cols-3
+    lg:place-items-center
+
     `}
 `;
 
@@ -28,7 +33,6 @@ const CardContainer = styled.div`
   rounded-xl
   pt-4
     
-  lg:gap-x-40
     `}
 `;
 
