@@ -7,10 +7,9 @@ import ContentComponent from "@/Content/ContentComponent";
 
 const CloudContainer = styled.div`
   ${tw`
-       w-screen
-    h-screen
+    w-screen
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
-    overflow-hidden
     flex
     justify-center
  

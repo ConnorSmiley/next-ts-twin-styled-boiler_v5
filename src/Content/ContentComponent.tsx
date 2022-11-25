@@ -6,7 +6,7 @@ import JsonData from "Content/JSONContent";
 const ContentComponentContainer = styled.div`
   ${tw`
     w-full
-    h-auto
+    h-full
     `}
 `;
 
@@ -14,6 +14,21 @@ const ContentComponentStyle = styled.div`
   ${tw`
     w-full
     h-full
+    grid
+    grid-cols-2
+    gap-4
+    `}
+`;
+
+const CardContainer = styled.div`
+  ${tw`
+  bg-white
+  w-full
+  h-96
+  rounded-xl
+  pt-4
+    
+  lg:gap-x-40
     `}
 `;
 
@@ -50,14 +65,16 @@ const ContentComponent: React.FC<IProps> = () => {
         <ContentComponentStyle>
           {JsonData.map(data => {
             return (
-              <div>
-                <Title key={data.id}>
-                  {data.title}
-                </Title>
-                <Date>
-                  {data.date}
-                </Date>
-              </div>
+              <>
+                <CardContainer>
+                  <Title key={data.id}>
+                    {data.title}
+                  </Title>
+                  <Date>
+                    {data.date}
+                  </Date>
+                </CardContainer>
+              </>
             );
           })}
         </ContentComponentStyle>
