@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -49,7 +48,12 @@ const HoverStyle = styled.div`
     `}
 `;
 
-const Navbar: NextPage = () => {
+
+export interface IProps {
+
+}
+
+const Navbar: React.FC<IProps> = () => {
 
   return (
     <>
@@ -74,7 +78,7 @@ const Navbar: NextPage = () => {
             </HoverStyle>
             <HoverStyle>
               <Link href="/Cloud">
-                I.T. && cloud
+                CLOUD
               </Link>
             </HoverStyle>
             <HoverStyle>
@@ -95,3 +99,4 @@ const Navbar: NextPage = () => {
 };
 
 export default Navbar;
+

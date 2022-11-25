@@ -1,41 +1,73 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import JsonData from "Content/JSONContent";
 
 const ContentComponentContainer = styled.div`
-    ${tw`
-    bg-gray-500
+  ${tw`
     w-full
-    rounded-lg
-    
+    h-auto
     `}
-`
+`;
 
 const ContentComponentStyle = styled.div`
-    ${tw`
-    flex
+  ${tw`
     w-full
     h-full
+    `}
+`;
+
+const Title = styled.div`
+  ${tw`
+    text-white
+    text-3xl
+    uppercase
+    font-bold
+    flex
+    items-center
+    justify-center
+    `}
+`;
+
+const Date = styled.div`
+  ${tw`
+    text-white
+    text-xl
+    flex
+    items-center
+    justify-center
     
     `}
-`
+`;
 
-const Header = styled.div`
-    ${tw`
-    
-    `}
-`
-
-export default function ContentComponent () {
-    return (
-    <>
-        <ContentComponentContainer>
-            <ContentComponentStyle>
-              <Header header={header}/>
-
-
-            </ContentComponentStyle>
-        </ContentComponentContainer>
-    </>
-    )
+export interface IProps {
 }
+
+const ContentComponent: React.FC<IProps> = () => {
+  return (
+    <>
+      <ContentComponentContainer>
+        <ContentComponentStyle>
+          {JsonData.map(data => {
+            return (
+              <div>
+                <Title key={data.id}>
+                  {data.title}
+                </Title>
+                <Date>
+                  {data.date}
+                </Date>
+              </div>
+            );
+          })}
+        </ContentComponentStyle>
+      </ContentComponentContainer>
+    </>
+  );
+};
+
+export default ContentComponent;
+
+
+
+

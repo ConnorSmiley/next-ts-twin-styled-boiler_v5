@@ -39,12 +39,6 @@ const CloudStyle = styled.div`
     `}
 `;
 
-const Box = styled.div`
-    ${`
-    
-    `}
-`
-
 
 export default function Cloud() {
   return (
