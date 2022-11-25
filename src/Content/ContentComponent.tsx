@@ -59,6 +59,17 @@ const Date = styled.div`
     `}
 `;
 
+const ContentContainer = styled.div`
+    ${tw`
+    flex
+    items-center
+    justify-center
+
+    
+    `}
+`
+
+
 export interface IProps {
 }
 
@@ -77,6 +88,9 @@ const ContentComponent: React.FC<IProps> = () => {
                   <Date>
                     {data.date}
                   </Date>
+                  <ContentContainer>
+                    {data.content}
+                  </ContentContainer>
                 </CardContainer>
               </>
             );
