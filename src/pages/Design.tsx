@@ -50,8 +50,8 @@ const Thumbnail = styled.div`
   aspect-ratio: 1 / 1;
   ${tw`
     bg-black
-    w-auto
-    h-auto
+    w-20
+    h-20
     `}
 `;
 
@@ -62,14 +62,12 @@ function Design() {
         <Navbar />
         <DesignStyle>
           <Grid>
-            <Grid2>
               <Thumbnail />
               <Thumbnail />
               <Thumbnail />
               <Thumbnail />
               <Thumbnail />
               <Thumbnail />
-            </Grid2>
           </Grid>
         </DesignStyle>
       </DesignContainer>

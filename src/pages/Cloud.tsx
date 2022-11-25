@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
+import ContentComponent from "@/Content/ContentComponent";
 
 
 const CloudContainer = styled.div`
@@ -31,12 +32,15 @@ const DarkBackground = styled.div`
 
 const CloudStyle = styled.div`
   ${tw`
+  w-full
+  h-full
+  m-2
     
     `}
 `;
 
-const box = styled.div`
-    ${tw`
+const Box = styled.div`
+    ${`
     
     `}
 `
@@ -49,6 +53,8 @@ export default function Cloud() {
         <Navbar />
         <DarkBackground>
           <CloudStyle>
+            <ContentComponent />
+
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>
