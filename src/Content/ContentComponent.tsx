@@ -64,7 +64,6 @@ const ContentContainer = styled.div`
     flex
     items-center
     justify-center
-
     
     `}
 `
