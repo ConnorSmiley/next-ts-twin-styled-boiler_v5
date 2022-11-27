@@ -16,7 +16,8 @@ const ContentComponentStyle = styled.div`
     h-full
     grid
     gap-4
-    
+    px-4
+
     sm:grid-cols-2
 
     lg:grid-cols-3
@@ -27,11 +28,12 @@ const ContentComponentStyle = styled.div`
 
 const CardContainer = styled.div`
   ${tw`
-  bg-white
+  bg-gray-100
   w-full
   h-96
   rounded-xl
   pt-4
+
     
     `}
 `;
@@ -45,6 +47,8 @@ const Title = styled.div`
     flex
     items-center
     justify-center
+    text-black
+
     `}
 `;
 
@@ -55,6 +59,7 @@ const Date = styled.div`
     flex
     items-center
     justify-center
+    text-black
     
     `}
 `;
@@ -68,6 +73,11 @@ const ContentContainer = styled.div`
     `}
 `
 
+const PictureContainer = styled.div`
+    ${tw`
+    
+    `}
+`
 
 export interface IProps {
 }
@@ -87,6 +97,9 @@ const ContentComponent: React.FC<IProps> = () => {
                   <Date>
                     {data.date}
                   </Date>
+                  <PictureContainer>
+                    {data.img}
+                  </PictureContainer>
                   <ContentContainer>
                     {data.content}
                   </ContentContainer>

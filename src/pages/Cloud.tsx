@@ -19,8 +19,6 @@ const CloudContainer = styled.div`
 const DarkBackground = styled.div`
   ${tw`
     mt-20
-    bg-black
-    opacity-50
     h-auto
     w-[98%]
     flex
@@ -34,6 +32,7 @@ const CloudStyle = styled.div`
   w-full
   h-full
   m-5
+  text-black
     
     `}
 `;
