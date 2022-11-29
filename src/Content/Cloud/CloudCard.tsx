@@ -69,6 +69,8 @@ const Date = styled.div`
     `}
 `
 
+
+
 const PictureContainer = styled.div`
   ${tw`
     
