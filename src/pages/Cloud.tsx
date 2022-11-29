@@ -19,6 +19,8 @@ const DarkBackground = styled.div`
     mt-20
     h-full
     w-[98%]
+    flex
+    justify-center
     `}
 `;
 
@@ -32,8 +34,6 @@ const CloudStyle = styled.div`
     
     `}
 `;
-
-
 
 export default function Cloud() {
   return (

@@ -5,26 +5,37 @@ import { Button } from "@mui/material";
 import ContentComponent from "@/Content/ContentComponent";
 import JsonData from "@/Content/JSONContent";
 
+const CloudCardContainer = styled.div`
+  ${tw`
+    w-full
+    h-full
+    
+    
+    `}
+`;
+
 const CardContainer = styled.div`
   ${tw`
   bg-gray-100
   rounded-xl
   pt-4
-  h-auto
-  w-auto
   aspect-w-1
   aspect-h-1
+  w-full
+  h-full
 
     `}
 `;
 
-
 const CloudCardStyle = styled.div`
   ${tw`
   grid
-  grid-cols-3
+  grid-cols-1
   gap-4
-    
+  
+  sm:grid-cols-2
+  md:grid-cols-2
+  lg:grid-cols-3
     `}
 `;
 
@@ -34,22 +45,29 @@ const Title = styled.div`
     text-3xl
     uppercase
     font-bold
-    flex
-    items-center
-    justify-center
     text-black
-
-    `}
-`;
-
-const ContentContainer = styled.div`
-  ${tw`
     flex
-    items-center
     justify-center
-    
+    mt-4
+
+    sm:text-xl
+    md:text-base
+    lg:text-2xl
     `}
 `;
+
+const Date = styled.div`
+    ${tw`
+    mt-14
+    flex
+    justify-center
+    font-bold
+    
+    md:text-sm
+    lg:text-base
+ 
+    `}
+`
 
 const PictureContainer = styled.div`
   ${tw`
@@ -57,11 +75,8 @@ const PictureContainer = styled.div`
     `}
 `;
 
-const CloudCardContainer = styled.div`
+const ContentContainer = styled.div`
   ${tw`
-    w-full
-    h-full
-    
     `}
 `;
 
@@ -100,5 +115,4 @@ const CloudCard: React.FC<IProps> = () => {
     </>
   );
 };
-
 export default CloudCard;
