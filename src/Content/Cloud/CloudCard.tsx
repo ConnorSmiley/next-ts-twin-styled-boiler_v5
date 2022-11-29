@@ -65,7 +65,6 @@ const CloudCardContainer = styled.div`
     `}
 `;
 
-
 export interface IProps {
 
 }
