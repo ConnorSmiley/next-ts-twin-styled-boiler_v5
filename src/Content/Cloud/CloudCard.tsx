@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Button } from "@mui/material";
-import ContentComponent from "@/Content/ContentComponent";
 import JsonData from "@/Content/JSONContent";
 
 const CloudCardContainer = styled.div`
