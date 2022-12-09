@@ -15,6 +15,13 @@ const AboutContainer = styled.div`
 
 const AboutStyle = styled.div`
     ${tw`
+    mt-20
+    
+    `}
+`
+
+const LinkS = styled.div`
+    ${tw`
     
     `}
 `
@@ -25,6 +32,10 @@ export default function About () {
         <AboutContainer>
             <AboutStyle>
                 <Navbar />
+                <div class="text-xl"
+                >
+                    dfjkdl
+                </div>
 
             </AboutStyle>
         </AboutContainer>

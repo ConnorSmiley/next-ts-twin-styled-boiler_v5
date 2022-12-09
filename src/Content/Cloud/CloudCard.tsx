@@ -10,7 +10,6 @@ const CloudCardContainer = styled.div`
     w-full
     h-full
     
-    
     `}
 `;
 
