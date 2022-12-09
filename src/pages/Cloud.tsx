@@ -21,6 +21,7 @@ const DarkBackground = styled.div`
     w-[98%]
     flex
     justify-center
+    px-20
     `}
 `;
 
@@ -49,3 +50,17 @@ export default function Cloud() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

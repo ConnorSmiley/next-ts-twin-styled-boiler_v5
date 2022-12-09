@@ -10,49 +10,49 @@ const JsonData = [
     "id":"2",
     "title": "placeholder2",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "djfadf",
     "img": ""
   },
   {
     "id":"3",
     "title": "placeholder3",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "djfdkjkk",
     "img": ""
   },
   {
     "id":"4",
     "title": "placeholder4",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "aaa",
     "img": ""
   },
   {
     "id":"1",
     "title": "placeholder",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "df",
     "img": ""
   },
   {
     "id":"2",
     "title": "placeholder2",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "wo",
     "img": ""
   },
   {
     "id":"3",
     "title": "placeholder3",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "adf",
     "img": ""
   },
   {
     "id":"4",
     "title": "placeholder4",
     "date": "randomdate",
-    "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "content": "daf",
     "img": ""
   },
 ]
