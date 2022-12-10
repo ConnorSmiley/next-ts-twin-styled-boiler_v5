@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import styled from "styled-components";
 import tw from "twin.macro";
 import JsonData from "@/Content/JSONContent";
@@ -154,10 +156,9 @@ const Date = styled.div`
     xl:text-lg
     xl:bottom-4
 
-
- 
     `}
 `;
+
 
 const ButtonClick = styled.div`
   ${tw`
@@ -191,10 +192,11 @@ const ButtonClick = styled.div`
 `;
 
 export interface IProps {
-
+  url:string
 }
 
-const CloudCard: React.FC<IProps> = () => {
+const CloudCard: React.FC<IProps> = ({url}) => {
+  const router = useRouter();
 
   return (
     <>
@@ -213,18 +215,25 @@ const CloudCard: React.FC<IProps> = () => {
                       <Picture src={data.img} />
                     </PictureContainer>
 
-                      <ContentContainer>
-                        {data.content}
-                      </ContentContainer>
-                      <Date>
-                        {data.date}
-                      </Date>
+                    <ContentContainer>
+                      {data.content}
+                    </ContentContainer>
+                    <Date>
+                      {data.date}
+                    </Date>
 
-                      <ButtonContainer>
+                    <ButtonContainer>
+
+                      <Link href={{
+                        pathname: url,
+                        query: { cloud: router.query.url }
+                      }}>
                         <ButtonClick>
                           Click
                         </ButtonClick>
-                      </ButtonContainer>
+                      </Link>
+
+                    </ButtonContainer>
                   </CardStyle>
                 </CardContainer>
               </>
@@ -235,4 +244,6 @@ const CloudCard: React.FC<IProps> = () => {
     </>
   );
 };
+
+
 export default CloudCard;
