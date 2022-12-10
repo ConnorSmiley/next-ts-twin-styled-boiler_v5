@@ -1,10 +1,10 @@
 const JsonData = [
   {
-    "id":"1",
-    "title": "How many are there?",
+    "id":1,
+    "title": "How many AWS services are there?",
     "date": "11/27/22",
     "content": "There are over 300+ micro services from AWS. Choosing which service is important, but understanding their purpose is critical. At the moment, I am trying to decide on a data base (relational, non-relational, key value pair...) ",
-    "img": ""
+    "img": "../images/img.png"
   },
   {
     "id":"2",

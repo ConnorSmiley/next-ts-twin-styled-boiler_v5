@@ -21,7 +21,11 @@ const DarkBackground = styled.div`
     w-[98%]
     flex
     justify-center
-    px-20
+    px-2
+    
+    sm:px-20
+    sm:pt-4
+    
     `}
 `;
 
@@ -31,7 +35,6 @@ const CloudStyle = styled.div`
   h-full
   m-5
   text-black
-  pt-4
     
     `}
 `;
