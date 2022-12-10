@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
-import ContentComponent from "@/Content/ContentComponent";
+import CloudCard from "@/Content/Cloud/CloudCard";
 
 
 const CloudContainer = styled.div`
@@ -10,8 +10,6 @@ const CloudContainer = styled.div`
     w-screen
     h-full
     bg-gradient-to-r from-pink-500 to-purple-900
-    flex
-    justify-center
  
     `}
 `;
@@ -19,13 +17,10 @@ const CloudContainer = styled.div`
 const DarkBackground = styled.div`
   ${tw`
     mt-20
-    bg-black
-    opacity-50
-    h-auto
+    h-full
     w-[98%]
     flex
     justify-center
-    items-center
     `}
 `;
 
@@ -34,10 +29,11 @@ const CloudStyle = styled.div`
   w-full
   h-full
   m-5
+  text-black
+  pt-4
     
     `}
 `;
-
 
 export default function Cloud() {
   return (
@@ -45,10 +41,9 @@ export default function Cloud() {
       <CloudContainer>
         <Navbar />
         <DarkBackground>
-          <CloudStyle>
-            <ContentComponent />
-
-          </CloudStyle>
+            <CloudStyle>
+              <CloudCard />
+            </CloudStyle>
         </DarkBackground>
       </CloudContainer>
     </>
