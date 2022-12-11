@@ -62,12 +62,12 @@ function Design() {
         <Navbar />
         <DesignStyle>
           <Grid>
-              <Thumbnail />
-              <Thumbnail />
-              <Thumbnail />
-              <Thumbnail />
-              <Thumbnail />
-              <Thumbnail />
+            <Thumbnail />
+            <Thumbnail />
+            <Thumbnail />
+            <Thumbnail />
+            <Thumbnail />
+            <Thumbnail />
           </Grid>
         </DesignStyle>
       </DesignContainer>

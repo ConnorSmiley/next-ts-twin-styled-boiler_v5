@@ -80,18 +80,19 @@ const PictureContainer = styled.div`
   flex
   items-center
   justify-center
+  h-full
+  pb-40
   
     `}
 `;
 
 const Picture = styled.img`
   ${tw`
-  h-40
   
   sm:h-24
   md:h-32
   lg:h-28
-   xl:h-56 
+   xl:h-52
     `}
 `;
 
@@ -191,10 +192,9 @@ const ButtonClick = styled.div`
 `;
 
 export interface IProps {
-  url:string
 }
 
-const CloudCard: React.FC<IProps> = ({url}) => {
+const CloudCard: React.FC<IProps> = () => {
   const router = useRouter();
 
   return (
@@ -223,10 +223,13 @@ const CloudCard: React.FC<IProps> = ({url}) => {
 
                     <ButtonContainer>
 
-                      <Link href={{
-                        pathname: url,
-                        query: { cloud: router.query.url }
-                      }}>
+                      <Link
+                        href={'/Cloud/' + data.id}
+
+                        // href={{
+                        // pathname: data.url,
+                        // query: { cloud: router.query.url }}}
+                      >
                         <ButtonClick>
                           Click
                         </ButtonClick>
@@ -243,6 +246,5 @@ const CloudCard: React.FC<IProps> = ({url}) => {
     </>
   );
 };
-
 
 export default CloudCard;
