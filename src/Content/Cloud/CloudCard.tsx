@@ -187,7 +187,6 @@ const ButtonClick = styled.div`
     
     md:right-4
     
-    
     `}
 `;
 
