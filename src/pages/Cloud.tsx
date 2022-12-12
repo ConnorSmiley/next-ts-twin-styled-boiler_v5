@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
-import CloudCard from "@/Content/Cloud/CloudCard";
+import CloudCard from "@/pages/Cloud/CloudCard";
+
 
 
 const CloudContainer = styled.div`

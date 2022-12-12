@@ -67,7 +67,7 @@ const Navbar: React.FC<IProps> = () => {
               </Link>
             </HoverStyle>
             <HoverStyle>
-              <Link href="/Design/">
+              <Link href="/Design">
                 Design
               </Link>
             </HoverStyle>
