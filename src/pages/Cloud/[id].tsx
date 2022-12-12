@@ -1,8 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import tw from "twin.macro"
-import JsonData from "@/Content/JSONContent";
-
+import {useRouter} from "next/router";
 
 export interface Props {
 
@@ -10,12 +7,15 @@ export interface Props {
 
 
 const getStaticPaths: React.FC<Props> = () =>{
+   const router = useRouter()
+   const cloudId = router.query.id
+
+
 
     return(
-
        <>
            <div>
-
+             {cloudId}
            </div>
        </>
     )
