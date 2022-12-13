@@ -80,14 +80,21 @@ export const getStaticProps = async () => {
   };
 };
 
-const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
-  console.log(blogPost);
+
+// PASS PROPS INTO CARD COMPONENT
+// PASS PROPS INTO CARD COMPONENT
+// PASS PROPS INTO CARD COMPONENT
+// PASS PROPS INTO CARD COMPONENT
+
+const Cloud: React.FC<ICloudProps> = () => {
   return (
     <>
       <CloudContainer>
         <Navbar />
         <DarkBackground>
           <CloudStyle>
+            <CloudCard blogPost=""/>
+
             {blogPost.map((val: any, idx: any) => (
               <>
               <PropsTitle key={blogPost.id}>
@@ -101,8 +108,6 @@ const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
                 </PropsTime>
               </>
             ))}
-
-            {/*<CloudCard />*/}
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>

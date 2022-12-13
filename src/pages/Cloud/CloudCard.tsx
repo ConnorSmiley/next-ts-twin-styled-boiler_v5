@@ -1,9 +1,8 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "styled-components";
 import tw from "twin.macro";
-import JsonData from "@/Content/JSONContent";
+import { supabase } from "@/utils/supabase";
 
 const CloudCardContainer = styled.div`
   ${tw`
@@ -192,51 +191,55 @@ const ButtonClick = styled.div`
 `;
 
 export interface IProps {
+  blogPost: any;
 }
 
-const CloudCard: React.FC<IProps> = () => {
-  const router = useRouter();
+export const getStaticProps = async () => {
+  const { data: blogPost } = await supabase.from("BlogPosts").select("*");
+  console.log(supabase);
 
+  return {
+    props: {
+      blogPost
+    }
+  };
+};
+
+const CloudCard: React.FC<IProps> = ({ blogPost }) => {
   return (
     <>
       <CloudCardContainer>
         <CloudCardStyle>
-          {JsonData.map(data => {
-            return (
-              <>
-                <CardContainer>
-                  <CardStyle>
-                    <Title key={data.id}>
-                      {data.title}
-                    </Title>
-
-                    <PictureContainer>
-                      <Picture src={data.img} />
-                    </PictureContainer>
-
-                    <ContentContainer>
-                      {data.content}
-                    </ContentContainer>
-                    <Date>
-                      {data.date}
-                    </Date>
-
-                    <ButtonContainer>
-
-                      <Link
-                        href={'/Cloud/' + data.id}
-                      >
-                        <ButtonClick>
-                          Click
-                        </ButtonClick>
-                      </Link>
-
-                    </ButtonContainer>
-                  </CardStyle>
-                </CardContainer>
-              </>
-            );
-          })}
+          {blogPost.map((idx: any) => (
+            <>
+              <CardContainer>
+                <CardStyle>
+                  <Title>
+                    {blogPost[idx].title}
+                  </Title>
+                  <PictureContainer>
+                    {/*<Picture src={data.img} />*/}
+                  </PictureContainer>
+                  <ContentContainer>
+                    {blogPost[idx].content}
+                  </ContentContainer>
+                  <Date>
+                    {blogPost[idx].timeStamp}
+                  </Date>
+                  <ButtonContainer>
+                    <Link
+                      href={"/Cloud/" + blogPost[idx].id}
+                    >
+                      <ButtonClick>
+                        Click
+                      </ButtonClick>
+                    </Link>
+                  </ButtonContainer>
+                </CardStyle>
+              </CardContainer>
+            </>
+          ))
+          }
         </CloudCardStyle>
       </CloudCardContainer>
     </>
