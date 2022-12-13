@@ -40,7 +40,18 @@ const CloudStyle = styled.div`
     `}
 `;
 
+export async function getStaticProps() {
+  const {data : BlogPosts, error} =await supabase.from('BlogPosts').select('*')
+  return {
+    if (error:string) {
+      throw new Error(error)
+    }
+
+  }
+}
+
 export default function Cloud() {
+
   return (
     <>
       <CloudContainer>
@@ -48,6 +59,8 @@ export default function Cloud() {
         <DarkBackground>
             <CloudStyle>
               <CloudCard />
+              {data}
+
             </CloudStyle>
         </DarkBackground>
       </CloudContainer>
