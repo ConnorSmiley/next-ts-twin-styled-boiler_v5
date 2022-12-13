@@ -225,10 +225,6 @@ const CloudCard: React.FC<IProps> = () => {
 
                       <Link
                         href={'/Cloud/' + data.id}
-
-                        // href={{
-                        // pathname: data.url,
-                        // query: { cloud: router.query.url }}}
                       >
                         <ButtonClick>
                           Click
@@ -246,5 +242,4 @@ const CloudCard: React.FC<IProps> = () => {
     </>
   );
 };
-
 export default CloudCard;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import CloudCard from "@/pages/Cloud/CloudCard";
-import {supabase} from "../utils/supabase"
+import { supabase } from "../utils/supabase";
 
 const CloudContainer = styled.div`
   ${tw`
@@ -39,34 +39,35 @@ const CloudStyle = styled.div`
     `}
 `;
 
-export async function getStaticProps() {
-  const {data: posts, error }= await supabase.from('BlogPosts').select('*')
 
-  if (error) {
-    throw new Error(error)
-  }
-
-  return {
-    props: {
-      posts
-    }
-  }
-
+export interface ICloudProps {
+  blogPost:any[]
 }
 
-export default function Cloud() {
+export const getStaticProps = async () => {
+  const { data: blogPost } = await supabase.from("BlogPosts").select("*");
+  return {
+    props: {
+      blogPost
+    }
+  };
+};
+
+const Cloud: React.FC<ICloudProps> = ({blogPost}) => {
+  console.log({blogPost});
 
   return (
     <>
       <CloudContainer>
         <Navbar />
         <DarkBackground>
-            <CloudStyle>
-              <CloudCard />
-            </CloudStyle>
+          <CloudStyle>
+            <CloudCard />
+          </CloudStyle>
         </DarkBackground>
       </CloudContainer>
     </>
   );
 }
 
+export default Cloud
