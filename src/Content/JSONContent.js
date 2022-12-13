@@ -59,5 +59,4 @@ const JsonData = [
   },
 ]
 
-
 export default JsonData

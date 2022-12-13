@@ -25,7 +25,6 @@ const DarkBackground = styled.div`
     
     sm:px-20
     sm:pt-4
-    
     `}
 `;
 
@@ -39,9 +38,37 @@ const CloudStyle = styled.div`
     `}
 `;
 
+const PropsTitle = styled.div`
+  ${tw`
+    text-white
+    h-20
+    w-20
+    
+    `}
+`;
+
+const PropsContent = styled.div`
+    ${tw`
+    text-white
+    h-20
+    w-20
+    
+    `}
+`
+
+const PropsTime = styled.div`
+    ${tw`
+    text-white
+    h-20
+    w-20
+
+    
+    `}
+`
+
 
 export interface ICloudProps {
-  blogPost:any[]
+  blogPost: any;
 }
 
 export const getStaticProps = async () => {
@@ -53,21 +80,34 @@ export const getStaticProps = async () => {
   };
 };
 
-const Cloud: React.FC<ICloudProps> = ({blogPost}) => {
-  console.log({blogPost});
-
+const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
+  console.log(blogPost);
   return (
     <>
       <CloudContainer>
         <Navbar />
         <DarkBackground>
           <CloudStyle>
-            <CloudCard />
+            {blogPost.map((val: any, idx: any) => (
+              <>
+              <PropsTitle key={blogPost.id}>
+                {blogPost[idx].title}
+              </PropsTitle>
+              <PropsContent>
+                {blogPost[idx].content}
+              </PropsContent>
+                <PropsTime>
+                  {blogPost[idx].TimeStamp}
+                </PropsTime>
+              </>
+            ))}
+
+            {/*<CloudCard />*/}
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>
     </>
   );
-}
+};
 
-export default Cloud
+export default Cloud;
