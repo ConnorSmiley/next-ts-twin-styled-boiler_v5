@@ -1,29 +1,21 @@
 import supabase from "../config/supabaseClient";
-import React, { useState, useEffect } from "react";
 
-function App() {
-  const [data, setData] = useState(null); // Initialize state variable to store data
 
-  useEffect(() => {
+import React from 'react';
+import { useQuery } from 'react-query';
 
-    // Fetch data from API when the component mounts
+function MyComponent() {
+  const supabase_URL = 'https://njnfyypwtoiiqclfvxqe.supabase.co'
+  const { data, isLoading, error } = useQuery('myData', () => fetch(supabase_URL));
 
-    fetch("https://example.com/api/data")
-      .then(response => response.json()) // Parse the response as JSON
-      .then(data => setData(data)); // Set the data in state
-  }, []);
+  if (isLoading) return 'Loading...';
+  if (error) return `Error: ${error.message}`;
 
-  if (!data) {
-    // If the data is not yet available, show a loading message
-    return <p>Loading data...</p>;
-  }
-
-  // Otherwise, display the data
   return (
-    <ul>
+    <div>
       {data.map(item => (
-        <li key={item.id}>{item.name}</li>
+        <p key={item.id}>{item.name}</p>
       ))}
-    </ul>
+    </div>
   );
 }
