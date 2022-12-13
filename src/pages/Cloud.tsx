@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import CloudCard from "@/pages/Cloud/CloudCard";
-import supabase from "../utils/supabase";
+import {supabase} from "../utils/supabase"
 
 const CloudContainer = styled.div`
   ${tw`
@@ -69,17 +69,4 @@ export default function Cloud() {
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
