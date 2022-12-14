@@ -33,7 +33,7 @@ const CloudStyle = styled.div`
   w-full
   h-full
   m-5
-  text-black
+  text-white
     
     `}
 `;
@@ -80,35 +80,38 @@ export const getStaticProps = async () => {
   };
 };
 
+const Cloud: React.FC<ICloudProps> = ({blogPost}) => {
+  console.log(blogPost)
 
-// PASS PROPS INTO CARD COMPONENT
-// PASS PROPS INTO CARD COMPONENT
-// PASS PROPS INTO CARD COMPONENT
-// PASS PROPS INTO CARD COMPONENT
-
-const Cloud: React.FC<ICloudProps> = () => {
   return (
     <>
       <CloudContainer>
         <Navbar />
         <DarkBackground>
           <CloudStyle>
-            <CloudCard blogPost=""/>
+            <CloudCard
+              title={blogPost.title}
+              content={blogPost.content}
+              timeStamp={blogPost.timeStamp}
+            />
 
-            {blogPost.map((val: any, idx: any) => (
-              <>
-              <PropsTitle key={blogPost.id}>
-                {blogPost[idx].title}
-              </PropsTitle>
-              <PropsContent>
-                {blogPost[idx].content}
-              </PropsContent>
-                <PropsTime>
-                  {blogPost[idx].TimeStamp}
-                </PropsTime>
-              </>
-            ))}
-          </CloudStyle>
+            {blogPost[0].title}
+
+            {/*{blogPost.map((val: any, idx: any) => (*/}
+            {/*  <>*/}
+            {/*  <PropsTitle key={blogPost.id}>*/}
+            {/*    {blogPost[idx].title}*/}
+            {/*  </PropsTitle>*/}
+            {/*  <PropsContent>*/}
+            {/*    {blogPost[idx].content}*/}
+            {/*  </PropsContent>*/}
+            {/*    <PropsTime>*/}
+            {/*      {blogPost[idx].timeStamp}*/}
+            {/*    </PropsTime>*/}
+            {/*  </>*/}
+            {/*))}*/}
+
+          </CloudStyle >
         </DarkBackground>
       </CloudContainer>
     </>

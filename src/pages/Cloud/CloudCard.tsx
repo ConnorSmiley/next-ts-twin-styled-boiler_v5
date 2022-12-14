@@ -191,55 +191,56 @@ const ButtonClick = styled.div`
 `;
 
 export interface IProps {
-  blogPost: any;
+  title:string
+  content:string
+  timeStamp:string
 }
 
-export const getStaticProps = async () => {
-  const { data: blogPost } = await supabase.from("BlogPosts").select("*");
-  console.log(supabase);
+// export const getStaticProps = async () => {
+//   const { data: blogPost } = await supabase.from("BlogPosts").select("*");
+//   console.log(supabase);
+//
+//   return {
+//     props: {
+//       blogPost
+//     }
+//   };
+// };
 
-  return {
-    props: {
-      blogPost
-    }
-  };
-};
-
-const CloudCard: React.FC<IProps> = ({ blogPost }) => {
+const CloudCard: React.FC<IProps> = ({title, content, timeStamp}) => {
   return (
     <>
       <CloudCardContainer>
         <CloudCardStyle>
-          {blogPost.map((idx: any) => (
             <>
               <CardContainer>
                 <CardStyle>
                   <Title>
-                    {blogPost[idx].title}
+                    {title}
                   </Title>
                   <PictureContainer>
                     {/*<Picture src={data.img} />*/}
                   </PictureContainer>
                   <ContentContainer>
-                    {blogPost[idx].content}
+                    {content}
+                    {/*{blogPost[idx].content}*/}
                   </ContentContainer>
                   <Date>
-                    {blogPost[idx].timeStamp}
+                    {timeStamp}
+                    {/*{blogPost[idx].timeStamp}*/}
                   </Date>
                   <ButtonContainer>
-                    <Link
-                      href={"/Cloud/" + blogPost[idx].id}
-                    >
+                    {/*<Link*/}
+                    {/*  href={"/Cloud/" + blogPost[idx].id}*/}
+                    {/*>*/}
                       <ButtonClick>
                         Click
                       </ButtonClick>
-                    </Link>
+                    {/*</Link>*/}
                   </ButtonContainer>
                 </CardStyle>
               </CardContainer>
             </>
-          ))
-          }
         </CloudCardStyle>
       </CloudCardContainer>
     </>
