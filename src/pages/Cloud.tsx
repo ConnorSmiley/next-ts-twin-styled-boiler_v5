@@ -33,38 +33,12 @@ const CloudStyle = styled.div`
   w-full
   h-full
   m-5
-  text-white
+  grid
+  grid-cols-2
+  
     
     `}
 `;
-
-const PropsTitle = styled.div`
-  ${tw`
-    text-white
-    h-20
-    w-20
-    
-    `}
-`;
-
-const PropsContent = styled.div`
-    ${tw`
-    text-white
-    h-20
-    w-20
-    
-    `}
-`
-
-const PropsTime = styled.div`
-    ${tw`
-    text-white
-    h-20
-    w-20
-
-    
-    `}
-`
 
 
 export interface ICloudProps {
@@ -80,8 +54,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Cloud: React.FC<ICloudProps> = ({blogPost}) => {
-  console.log(blogPost)
+const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
 
   return (
     <>
@@ -89,29 +62,12 @@ const Cloud: React.FC<ICloudProps> = ({blogPost}) => {
         <Navbar />
         <DarkBackground>
           <CloudStyle>
-            <CloudCard
-              title={blogPost.title}
-              content={blogPost.content}
-              timeStamp={blogPost.timeStamp}
-            />
-
-            {blogPost[0].title}
-
-            {/*{blogPost.map((val: any, idx: any) => (*/}
-            {/*  <>*/}
-            {/*  <PropsTitle key={blogPost.id}>*/}
-            {/*    {blogPost[idx].title}*/}
-            {/*  </PropsTitle>*/}
-            {/*  <PropsContent>*/}
-            {/*    {blogPost[idx].content}*/}
-            {/*  </PropsContent>*/}
-            {/*    <PropsTime>*/}
-            {/*      {blogPost[idx].timeStamp}*/}
-            {/*    </PropsTime>*/}
-            {/*  </>*/}
-            {/*))}*/}
-
-          </CloudStyle >
+            {blogPost.reverse().map((posts:any) => (
+              <>
+                <CloudCard posts={posts}/>
+              </>
+            ))}
+          </CloudStyle>
         </DarkBackground>
       </CloudContainer>
     </>

@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { supabase } from "@/utils/supabase";
@@ -85,15 +84,6 @@ const PictureContainer = styled.div`
     `}
 `;
 
-const Picture = styled.img`
-  ${tw`
-  
-  sm:h-24
-  md:h-32
-  lg:h-28
-   xl:h-52
-    `}
-`;
 
 const ContentContainer = styled.div`
   white-space: nowrap;
@@ -191,23 +181,11 @@ const ButtonClick = styled.div`
 `;
 
 export interface IProps {
-  title:string
-  content:string
-  timeStamp:string
+  posts:any
+
 }
 
-// export const getStaticProps = async () => {
-//   const { data: blogPost } = await supabase.from("BlogPosts").select("*");
-//   console.log(supabase);
-//
-//   return {
-//     props: {
-//       blogPost
-//     }
-//   };
-// };
-
-const CloudCard: React.FC<IProps> = ({title, content, timeStamp}) => {
+const CloudCard: React.FC<IProps> = ({posts}) => {
   return (
     <>
       <CloudCardContainer>
@@ -215,29 +193,24 @@ const CloudCard: React.FC<IProps> = ({title, content, timeStamp}) => {
             <>
               <CardContainer>
                 <CardStyle>
-                  <Title>
-                    {title}
-                  </Title>
-                  <PictureContainer>
-                    {/*<Picture src={data.img} />*/}
-                  </PictureContainer>
-                  <ContentContainer>
-                    {content}
-                    {/*{blogPost[idx].content}*/}
-                  </ContentContainer>
-                  <Date>
-                    {timeStamp}
-                    {/*{blogPost[idx].timeStamp}*/}
-                  </Date>
-                  <ButtonContainer>
-                    {/*<Link*/}
-                    {/*  href={"/Cloud/" + blogPost[idx].id}*/}
-                    {/*>*/}
-                      <ButtonClick>
-                        Click
-                      </ButtonClick>
-                    {/*</Link>*/}
-                  </ButtonContainer>
+                    <div>
+                      <Title>
+                        {posts.title}
+                      </Title>
+                      <PictureContainer>
+                      </PictureContainer>
+                      <ContentContainer>
+                        {posts.content}
+                      </ContentContainer>
+                      <Date>
+                        {posts.TimeStamp}
+                      </Date>
+                      <ButtonContainer>
+                        <ButtonClick>
+                          Click
+                        </ButtonClick>
+                      </ButtonContainer>
+                    </div>
                 </CardStyle>
               </CardContainer>
             </>
