@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { supabase } from "@/utils/supabase";
+import Link from "next/link";
 
 const CloudCardContainer = styled.div`
   ${tw`
@@ -81,7 +83,6 @@ const PictureContainer = styled.img`
   md:w-40
   lg:w-60
   xl:w-80
-  
   
     `}
 `;
@@ -177,6 +178,15 @@ const ButtonClick = styled.div`
     `}
 `;
 
+export const getStaticProps = async () => {
+  const { data: blogPost } = await supabase.from("BlogPosts").select("id");
+  return {
+    props: {
+      blogPost
+    }
+  };
+};
+
 export interface IProps {
   posts: any;
 
@@ -203,9 +213,11 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
                   {posts.TimeStamp.slice(0, -9)}
                 </Date>
                 <ButtonContainer>
-                  <ButtonClick>
-                    Click
-                  </ButtonClick>
+                  <Link key={posts.id} href={`Cloud/${posts.id}`}>
+                    <ButtonClick>
+                      Click
+                    </ButtonClick>
+                  </Link>
                 </ButtonContainer>
               </CardStyle>
             </CardContainer>

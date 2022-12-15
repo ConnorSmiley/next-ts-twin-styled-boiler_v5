@@ -1,24 +1,46 @@
 import React from "react";
-import {useRouter} from "next/router";
+import { supabase } from "@/utils/supabase";
 
-export interface Props {
 
+export interface IProps {
+  blogPost: any;
 }
 
+const CloudPosts: React.FC<IProps> = ({ post }) => {
+  console.log({post})
 
-const getStaticPaths: React.FC<Props> = () =>{
-   const router = useRouter()
-   const cloudId = router.query.id
+  return (
+    <>
+      <div>
+        {post.title}
+        {post.content}
+      </div>
+    </>
+  );
+};
 
+export const getStaticPaths = async () => {
+  const { data: blogPost } = await supabase.from("blogPosts").select("id");
 
+  const paths = blogPost.map(({ id }) => {
+    params: {
+      id : id.toString();
+    }
+  });
+  return {
+    paths,
+    fallback: false
+  };
+};
 
-    return(
-       <>
-           <div>
-             {cloudId}
-           </div>
-       </>
-    )
-}
+export const getStaticProps = async ({ params: { id } }) => {
+  const { data: post } = await supabase.from("blogPosts").select("*").eq("id", id).single();
 
-export default getStaticPaths
+  return {
+    props: {
+      post
+    }
+  };
+};
+
+export default CloudPosts;
