@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { supabase } from "@/utils/supabase";
 
 const CloudCardContainer = styled.div`
   ${tw`
@@ -12,13 +11,13 @@ const CloudCardContainer = styled.div`
 
 const CloudCardStyle = styled.div`
   ${tw`
-  grid
-  grid-cols-1
-  gap-2
-  
-  sm:grid-cols-2
-  md:grid-cols-2
-  lg:grid-cols-3
+  // grid
+  // grid-cols-1
+  // gap-2
+  //
+  // sm:grid-cols-2
+  // md:grid-cols-2
+  // lg:grid-cols-3
     `}
 `;
 
@@ -30,13 +29,12 @@ const CardContainer = styled.div`
   aspect-h-1
   flex
   flex-col
-  h-full
   w-full
   
   // sm:h-20
   // md:h-20
   // lg:h-20
-  xl:h-80
+  // xl:h-80
     `}
 `;
 
@@ -73,17 +71,20 @@ const Title = styled.div`
 `;
 
 
-const PictureContainer = styled.div`
+const PictureContainer = styled.img`
   ${tw`
-  flex
-  items-center
-  justify-center
+  w-full
   h-full
-  pb-40
+  mx-auto
+  
+  sm:w-40
+  md:w-40
+  lg:w-60
+  xl:w-80
+  
   
     `}
 `;
-
 
 const ContentContainer = styled.div`
   white-space: nowrap;
@@ -102,7 +103,6 @@ const ContentContainer = styled.div`
     pb-20
    
    sm:text-xl
-   
    lg:text-base
    xl:text-xl
    xl:pb-24
@@ -149,7 +149,6 @@ const Date = styled.div`
     `}
 `;
 
-
 const ButtonClick = styled.div`
   ${tw`
   w-20
@@ -169,51 +168,48 @@ const ButtonClick = styled.div`
     bottom-4
     hover:bg-pink-500
     
-    hover:bg-black
+    hover:bg-pink-500
     cursor-pointer
     
     sm:h-8
     sm:w-20
-    
     md:right-4
-    
     `}
 `;
 
 export interface IProps {
-  posts:any
+  posts: any;
 
 }
 
-const CloudCard: React.FC<IProps> = ({posts}) => {
+const CloudCard: React.FC<IProps> = ({ posts }) => {
   return (
     <>
       <CloudCardContainer>
         <CloudCardStyle>
-            <>
-              <CardContainer>
-                <CardStyle>
-                    <div>
-                      <Title>
-                        {posts.title}
-                      </Title>
-                      <PictureContainer>
-                      </PictureContainer>
-                      <ContentContainer>
-                        {posts.content}
-                      </ContentContainer>
-                      <Date>
-                        {posts.TimeStamp}
-                      </Date>
-                      <ButtonContainer>
-                        <ButtonClick>
-                          Click
-                        </ButtonClick>
-                      </ButtonContainer>
-                    </div>
-                </CardStyle>
-              </CardContainer>
-            </>
+          <>
+            <CardContainer>
+              <CardStyle>
+                <Title>
+                  {posts.title}
+                </Title>
+                <div>
+                  <PictureContainer src={posts.img} />
+                </div>
+                <ContentContainer>
+                  {posts.content}
+                </ContentContainer>
+                <Date>
+                  {posts.TimeStamp.slice(0, -9)}
+                </Date>
+                <ButtonContainer>
+                  <ButtonClick>
+                    Click
+                  </ButtonClick>
+                </ButtonContainer>
+              </CardStyle>
+            </CardContainer>
+          </>
         </CloudCardStyle>
       </CloudCardContainer>
     </>

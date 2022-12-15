@@ -8,7 +8,7 @@ import { supabase } from "../utils/supabase";
 const CloudContainer = styled.div`
   ${tw`
     w-screen
-    h-full
+    h-screen
     bg-gradient-to-r from-pink-500 to-purple-900
  
     `}
@@ -16,7 +16,7 @@ const CloudContainer = styled.div`
 
 const DarkBackground = styled.div`
   ${tw`
-    mt-20
+    mt-16
     h-full
     w-[98%]
     flex
@@ -25,21 +25,25 @@ const DarkBackground = styled.div`
     
     sm:px-20
     sm:pt-4
+    md:mt-20
     `}
 `;
 
 const CloudStyle = styled.div`
   ${tw`
   w-full
-  h-full
+  h-auto
   m-5
   grid
-  grid-cols-2
+  grid-cols-1
+  gap-2
   
+  sm:grid-cols-2
+  md:grid-cols-2
+  lg:grid-cols-3
     
     `}
 `;
-
 
 export interface ICloudProps {
   blogPost: any;
@@ -62,11 +66,13 @@ const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
         <Navbar />
         <DarkBackground>
           <CloudStyle>
+
             {blogPost.reverse().map((posts:any) => (
               <>
                 <CloudCard posts={posts}/>
               </>
             ))}
+
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>
