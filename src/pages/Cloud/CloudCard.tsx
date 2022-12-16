@@ -215,7 +215,9 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
                 <ButtonContainer>
                   <Link key={posts.id} href={`Cloud/${posts.id}`}>
                     <ButtonClick>
-                      Click
+                      <a>
+                        Click
+                      </a>
                     </ButtonClick>
                   </Link>
                 </ButtonContainer>

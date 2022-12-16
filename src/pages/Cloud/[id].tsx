@@ -1,9 +1,9 @@
 import React from "react";
 import { supabase } from "@/utils/supabase";
 
-
 export interface IProps {
   blogPost: any;
+  post:any
 }
 
 const CloudPosts: React.FC<IProps> = ({ post }) => {
