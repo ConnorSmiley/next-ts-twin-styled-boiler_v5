@@ -12,6 +12,7 @@ const NavbarBG = styled.div`
     bg-black
     absolute
     top-0
+    z-50
     
     sm:h-20
     `}

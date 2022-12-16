@@ -7,7 +7,7 @@ import Link from "next/link";
 const CloudCardContainer = styled.div`
   ${tw`
     w-full
-    h-full
+    h-auto
     `}
 `;
 

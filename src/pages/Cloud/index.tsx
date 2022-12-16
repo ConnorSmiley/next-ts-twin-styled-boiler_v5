@@ -4,11 +4,12 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import CloudCard from "@/pages/Cloud/CloudCard";
 import { supabase } from "@/utils/supabase";
+import Footer from "@/components/Footer";
 
 const CloudContainer = styled.div`
   ${tw`
     w-screen
-    h-screen
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
  
     `}
@@ -76,6 +77,7 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>
+      <Footer />
     </>
   );
 };

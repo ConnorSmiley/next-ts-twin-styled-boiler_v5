@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const HomeContainer = styled.div`
   ${tw`
@@ -30,8 +31,6 @@ const HomeStyles = styled.div`
 `;
 
 
-
-
 const IndexPage: NextPage = () => {
 
   return (
@@ -42,6 +41,7 @@ const IndexPage: NextPage = () => {
           home
         </HomeStyles>
       </HomeContainer>
+      <Footer />
     </>
   );
 };

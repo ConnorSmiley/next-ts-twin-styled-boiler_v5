@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SidebarNav from "@/components/SidebarNav";
 
 
 const CodingContainer = styled.div`
@@ -39,17 +41,19 @@ const Title = styled.div`
     `}
 `
 
-
-export default function Coding () {
+function Coding () {
     return (
     <>
         <CodingContainer>
             <CodingStyle>
                 <Navbar />
-                <Title>Coding</Title>
-
+                <SidebarNav />
             </CodingStyle>
         </CodingContainer>
+        <Footer />
     </>
     )
 }
+
+
+export default Coding
