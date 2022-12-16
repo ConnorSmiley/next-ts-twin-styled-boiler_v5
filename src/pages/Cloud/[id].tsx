@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { supabase } from "@/utils/supabase";
 
@@ -20,25 +22,25 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 };
 
 export const getStaticPaths = async () => {
-  const { data: blogPost } = await supabase.from("blogPosts").select("id");
+  const { data: posts } = await supabase.from("BlogPosts").select("id");
 
-  const paths = blogPost.map(({ id }) => {
+  const paths = posts.map(({ id }) => ({
     params: {
-      id : id.toString();
+      id : id.toString()
     }
-  });
+  }))
   return {
     paths,
     fallback: false
-  };
+  }
 };
 
 export const getStaticProps = async ({ params: { id } }) => {
-  const { data: post } = await supabase.from("blogPosts").select("*").eq("id", id).single();
+  const { data: post } = await supabase.from("BlogPosts").select("*").eq("id", id).single();
 
   return {
     props: {
-      post
+      post,
     }
   };
 };

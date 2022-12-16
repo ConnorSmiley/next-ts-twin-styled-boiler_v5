@@ -58,7 +58,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
+const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
   return (
     <>
@@ -80,4 +80,4 @@ const Cloud: React.FC<ICloudProps> = ({ blogPost }) => {
   );
 };
 
-export default Cloud;
+export default Index;

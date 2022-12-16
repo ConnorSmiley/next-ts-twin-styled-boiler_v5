@@ -77,7 +77,7 @@ const Navbar: React.FC<IProps> = () => {
               </Link>
             </HoverStyle>
             <HoverStyle>
-              <Link href="/Cloud/Cloud">
+              <Link href="/Cloud/index">
                 CLOUD
               </Link>
             </HoverStyle>

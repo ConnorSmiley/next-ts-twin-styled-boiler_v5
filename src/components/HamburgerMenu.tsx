@@ -117,7 +117,7 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
               <Link href="/Coding">
                 Coding
               </Link>
-              <Link href="/Cloud/Cloud">
+              <Link href="/Cloud/index">
                 .I.T. & cloud
               </Link>
               <Link href="/Photos">
