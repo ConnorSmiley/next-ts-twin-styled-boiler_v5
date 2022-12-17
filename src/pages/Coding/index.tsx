@@ -3,8 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SidebarNav from "@/components/SidebarNav";
-
+import SidebarNavCoding, { ISidebarNavProps } from "@/pages/Coding/SidebarNavCoding";
 
 const CodingContainer = styled.div`
     ${tw`
@@ -26,34 +25,25 @@ const CodingStyle = styled.div`
     `}
 `
 
-const Title = styled.div`
-    ${tw`
-    w-auto
-    h-1/2
-    uppercase
-    font-extrabold
-    text-4xl
-    
-    sm:text-3xl
-    md:text-5xl
-    lg:text-8xl
-    
-    `}
-`
+export interface ICodingProps {
+   Projects:any
+    Blog:any
+}
 
-function Coding () {
+
+const Coding: React.FC<ICodingProps> = () => {
+
     return (
     <>
         <CodingContainer>
             <CodingStyle>
                 <Navbar />
-                <SidebarNav />
+                <SidebarNavCoding Projects="/Projects" Blog="/Blog"/>
             </CodingStyle>
         </CodingContainer>
         <Footer />
     </>
     )
 }
-
 
 export default Coding

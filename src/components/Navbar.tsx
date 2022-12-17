@@ -9,7 +9,6 @@ const NavbarBG = styled.div`
   ${tw`
     w-screen
     h-16
-    bg-black
     absolute
     top-0
     z-50
@@ -22,8 +21,8 @@ const NavbarStyle = styled.div`
   ${tw`
     w-screen
     h-full
-    pl-[45%]
-    pr-[1%]
+    pl-[20%]
+    pr-[20%]
     `}
 `;
 

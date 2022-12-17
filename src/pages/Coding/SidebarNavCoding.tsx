@@ -44,7 +44,8 @@ const SidebarNavText = styled.div`
     place-items-end
     h-80
     border-r-4
-    border-[#08e8de ]
+    // border-[#08e8de]
+    border-purple-900
     pr-10
  
     `}
@@ -57,7 +58,7 @@ const Projects = styled.div`
   py-4
   
   hover:cursor-pointer
-  hover:bg-yellow-500
+  hover:bg-purple-900
     `}
 `;
 
@@ -68,28 +69,30 @@ const Blog = styled.div`
   py-4
   
   hover:cursor-pointer
-  hover:bg-yellow-500
+  hover:bg-purple-900
     `}
 `;
 
 export interface ISidebarNavProps {
+  Projects: any
+  Blog:any
 }
 
-const SidebarNav: React.FC<ISidebarNavProps> = () => {
+const SidebarNavCoding: React.FC<ISidebarNavProps> = (props) => {
 
   return (
     <>
       <SidebarNavContainer>
         <SidebarNavStyle>
           <SidebarNavText>
-            <Link href="/Projects">
+            <Link href={`${props.Projects}`}>
               <Projects>
                 Projects
               </Projects>
             </Link>
-            <Link href="/Blog">
+            <Link href={`${props.Blog}`}>
               <Blog>
-                Blog
+                {props.Blog}
               </Blog>
             </Link>
           </SidebarNavText>
@@ -99,4 +102,4 @@ const SidebarNav: React.FC<ISidebarNavProps> = () => {
   );
 };
 
-export default SidebarNav;
+export default SidebarNavCoding;
