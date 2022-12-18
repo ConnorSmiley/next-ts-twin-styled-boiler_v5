@@ -193,6 +193,7 @@ export interface IProps {
 }
 
 const CloudCard: React.FC<IProps> = ({ posts }) => {
+
   return (
     <>
       <CloudCardContainer>

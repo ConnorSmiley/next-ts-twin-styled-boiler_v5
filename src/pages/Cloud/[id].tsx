@@ -50,7 +50,6 @@ const Content = styled.div`
 
 
 const CloudPosts: React.FC<IProps> = ({ post }) => {
-  console.log({ post });
 
   return (
     <>

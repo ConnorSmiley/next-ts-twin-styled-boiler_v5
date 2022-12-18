@@ -5,8 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DesignThumb from "@/pages/Design/DesignThumb";
 import { supabase } from "@/utils/supabase";
-import { IProps } from "@/pages/Cloud/CloudCard";
-import DesignCard from "@/pages/Design/DesignCard";
+import Link from "next/link";
 
 const DesignContainer = styled.div`
   ${tw`
@@ -46,13 +45,21 @@ const MainGrid = styled.div`
     `}
 `;
 
-const PictureContainer = styled.img`
+const PictureContainer = styled.div`
   ${tw`
     // aspect-w-16
     // aspect-h-12
-    h-12
-    w-12
+    h-full
+    w-full
     
+    `}
+`;
+
+const PictureAnchor = styled.a`
+  ${tw`
+    
+    w-auto
+    h-auto
     `}
 `;
 
@@ -70,36 +77,30 @@ export const getStaticProps = async () => {
 };
 
 const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
-  return (
-    <>
-      <DesignContainer>
-        <Navbar />
-        <DesignStyle>
-          <GridWidth>
-            <MainGrid>
+    return (
+      <>
+        <DesignContainer>
+          <Navbar />
+          <DesignStyle>
+            <GridWidth>
+              <MainGrid>
 
-              {thumbnails.map((data: any) => {
-                <DesignCard>;
-                  {data}
-                </DesignCard>;
-              })}
-              {/*<DesigngThumb />*/}
-              {/*<DesignThumb />*/}
-              {/*<DesignThumb />*/}
-              {/*<DesignThumb />*/}
-              {/*<DesignThumb />*/}
-              {/*<DesignThumb />*/}
-              {/*<DesignThumb />*/}
-            </MainGrid>
-          </GridWidth>
-        </DesignStyle>
-      </DesignContainer>
-      <Footer />
-    </>
-  );
-}
-  ;
+                {thumbnails.map((data: any) => (
+                  <Link key={data.id} href={`Design/${data.id}`}>
+                    <PictureContainer>
+                      <DesignThumb key={data.id} data={data} />
+                    </PictureContainer>
+                  </Link>
+                ))}
 
-  export default Design;
+              </MainGrid>
+            </GridWidth>
+          </DesignStyle>
+        </DesignContainer>
+        <Footer />
+      </>
+    );
+  }
+;
 
-
+export default Design;

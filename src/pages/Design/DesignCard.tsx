@@ -20,8 +20,8 @@ const DesignCardStyle = styled.div`
 
 const DesignImage = styled.img`
     ${tw`
-    h-20
-    w-20
+    h-12
+    w-12
     
     `}
 `
@@ -35,7 +35,6 @@ const DesignCard: React.FC<IDesignCardProps> = () => {
        <>
         <DesignCardContainer>
             <DesignCardStyle>
-                dfjdkljfdl;kjfkld;j;
 
             </DesignCardStyle>
         </DesignCardContainer>
