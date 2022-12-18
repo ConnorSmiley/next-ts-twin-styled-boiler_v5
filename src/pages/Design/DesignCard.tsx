@@ -20,8 +20,8 @@ const DesignCardStyle = styled.div`
 
 const DesignImage = styled.img`
     ${tw`
-    h-12
-    w-12
+    h-20
+    w-20
     
     `}
 `
