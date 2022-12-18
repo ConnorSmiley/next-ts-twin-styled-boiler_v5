@@ -10,7 +10,7 @@ import PhotoThumb from "@/pages/Photos/PhotoThumb";
 const PhotosContainer = styled.div`
   ${tw`
     w-screen
-    h-screen
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
 
     `}
@@ -29,8 +29,6 @@ const PhotosStyle = styled.div`
 const GridWidth = styled.div`
   ${tw`
      justify-center
-        object-contain
-
  
     `}
 `;
@@ -41,9 +39,7 @@ const MainGrid = styled.div`
     grid-cols-1
     gap-4
     place-items-center
-    justify-center    
-        object-contain
-
+    justify-center   
     
     sm:grid-cols-2
     md:grid-cols-2
@@ -58,8 +54,6 @@ const PictureContainer = styled.div`
     // aspect-h-12
     h-full
     w-full
-        object-contain
-
     
     `}
 `;
@@ -87,9 +81,7 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
           <GridWidth>
             <MainGrid>
               {pic.map((data: any) => (
-                <PictureContainer>
                   <PhotoThumb data={data} />
-                </PictureContainer>
               ))}
 
             </MainGrid>

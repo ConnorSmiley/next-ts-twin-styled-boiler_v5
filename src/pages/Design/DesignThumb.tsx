@@ -45,6 +45,12 @@ const HoverThumbTitle = styled.div`
   text-5xl
   font-extrabold
   mb-4
+  text-white
+  border
+  border-white
+  border-4
+  p-6
+  rounded-md
   
   sm:text-3xl
   md:text-3xl
@@ -55,7 +61,7 @@ const HoverThumbTitle = styled.div`
 
 const HoverThumbDescription = styled.div`
   ${tw`
-  text-black
+  text-white
   text-3xl
   font-light
   

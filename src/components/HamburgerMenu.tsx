@@ -31,8 +31,8 @@ const FaBarsIcon = styled(FaBars)`
     z-50
     text-white
     fill-current
-    right-4
-    top-3
+    right-8
+    top-4
     `}
 `;
 
