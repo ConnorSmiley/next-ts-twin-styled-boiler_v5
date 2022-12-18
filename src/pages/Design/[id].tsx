@@ -6,7 +6,9 @@ import Navbar from "@/components/Navbar";
 
 const IdContainer = styled.div`
     ${tw`
-    bg-red-500
+    w-screen
+    h-screen
+    bg-gradient-to-r from-pink-500 to-purple-900
     
     `}
 `
@@ -21,7 +23,7 @@ export interface IidProps {
     post:any
 }
 
-const DesignID: React.FC<IidProps> = ({post}) => {
+const DesignID: React.FC<IidProps> = () => {
 
     return(
        <>

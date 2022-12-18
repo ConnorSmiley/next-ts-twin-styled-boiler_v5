@@ -120,7 +120,7 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
               <Link href="/Cloud">
                 .I.T. & cloud
               </Link>
-              <Link href="/Photos">
+              <Link href="/Photos/index">
                 Photos
               </Link>
               <Link href="/About">

@@ -17,7 +17,7 @@ const CloudContainer = styled.div`
 
 const DarkBackground = styled.div`
   ${tw`
-    mt-16
+    pt-16
     h-full
     w-[98%]
     flex
@@ -26,7 +26,7 @@ const DarkBackground = styled.div`
     
     sm:px-20
     sm:pt-4
-    md:mt-20
+    md:pt-20
     `}
 `;
 
@@ -66,6 +66,7 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
       <CloudContainer>
         <Navbar />
         <DarkBackground>
+
           <CloudStyle>
 
             {blogPost.reverse().map((posts:any) => (

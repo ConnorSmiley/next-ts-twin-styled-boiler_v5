@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Link from "next/link";
 
 const DesignThumbContainer = styled.div`
   ${tw`
@@ -15,7 +14,7 @@ const DesignThumbContainer = styled.div`
 
 const DesignThumbStyle = styled.img`
   ${tw`
-     object-cover
+    object-cover
 
     hover:cursor-pointer
     hover:bg-black
@@ -35,7 +34,7 @@ const HoverContainer = styled.div`
   hover:cursor-pointer
   hover:opacity-100
   hover:bg-black
-  hover:bg-opacity-60
+  hover:bg-opacity-70
 
     `}
 `;
@@ -43,18 +42,28 @@ const HoverContainer = styled.div`
 
 const HoverThumbTitle = styled.div`
   ${tw`
-  text-black
-  text-6xl
-  font-bold
-    
+  text-5xl
+  font-extrabold
+  mb-4
+  
+  sm:text-3xl
+  md:text-3xl
+  lg:text-4xl
+  xl:text-5xl
     `}
 `;
 
 const HoverThumbDescription = styled.div`
   ${tw`
   text-black
-  text-4xl
+  text-3xl
   font-light
+  
+  sm:text-xl
+  md:text-xl
+  lg:text-2xl
+  xl:text-3xl
+
     
     `}
 `;

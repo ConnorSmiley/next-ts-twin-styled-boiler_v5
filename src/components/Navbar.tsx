@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
 import HamburgerMenu from "@/components/HamburgerMenu";
+import { useRouter } from "next/router";
 
 
 const NavbarBG = styled.div`
@@ -42,9 +43,41 @@ const NavbarText = styled.div`
     `}
 `;
 
+
+const NavbarTextBottomBorder = styled.div`
+  ${tw`
+  absolute
+  w-28
+  border-purple-900
+  border-b-8
+  flex
+  justify-center
+  pb-14
+  rounded-lg
+  
+  
+ hidden lg:flex
+    `}
+`;
+
+
 const HoverStyle = styled.div`
   ${tw`
+  flex
+  flex-col
+  items-center
+  justify-center
+  
+  
   hover:text-blue-500
+ 
+    `}
+`;
+
+const Highlighted = styled.div`
+  ${tw`
+    
+    
     `}
 `;
 
@@ -54,6 +87,8 @@ export interface IProps {
 }
 
 const Navbar: React.FC<IProps> = () => {
+  const router = useRouter();
+  const currentRoute = router.pathname;
 
   return (
     <>
@@ -61,36 +96,109 @@ const Navbar: React.FC<IProps> = () => {
         <NavbarStyle>
           <HamburgerMenu />
           <NavbarText>
-            <HoverStyle>
-              <Link href="/">
-                Home
-              </Link>
-            </HoverStyle>
-            <HoverStyle>
-              <Link href="/Design">
-                Design
-              </Link>
-            </HoverStyle>
-            <HoverStyle>
-              <Link href="/Coding">
-                Coding
-              </Link>
-            </HoverStyle>
-            <HoverStyle>
-              <Link href="/Cloud">
-                CLOUD
-              </Link>
-            </HoverStyle>
-            <HoverStyle>
-              <Link href="/Photos">
-                Photos
-              </Link>
-            </HoverStyle>
-            <HoverStyle>
-              <Link href="/About">
-                about
-              </Link>
-            </HoverStyle>
+
+            {currentRoute === "/" ?
+              <>
+                <HoverStyle>
+                  <Link href="/">
+                    Home
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/">
+                  Home
+                </Link>
+              </HoverStyle>
+            }
+
+            {currentRoute === "/Design" ?
+              <>
+                <HoverStyle>
+                  <Link href="/Design">
+                   Design
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/Design">
+                 Design
+                </Link>
+              </HoverStyle>
+            }
+
+            {currentRoute === "/Coding" ?
+              <>
+                <HoverStyle>
+                  <Link href="/Coding">
+                   Coding
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/Coding">
+                  Coding
+                </Link>
+              </HoverStyle>
+            }
+
+            {currentRoute === "/Cloud" ?
+              <>
+                <HoverStyle>
+                  <Link href="/Cloud">
+                    Cloud
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/Cloud">
+                 Cloud
+                </Link>
+              </HoverStyle>
+            }
+
+            {currentRoute === "/Photos" ?
+              <>
+                <HoverStyle>
+                  <Link href="/Photos">
+                   Photos
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/Photos">
+                 Photos
+                </Link>
+              </HoverStyle>
+            }
+
+            {currentRoute === "/About" ?
+              <>
+                <HoverStyle>
+                  <Link href="/About">
+                   About
+                  </Link>
+                  <NavbarTextBottomBorder />
+                </HoverStyle>
+              </>
+              :
+              <HoverStyle>
+                <Link href="/About">
+                 About
+                </Link>
+              </HoverStyle>
+            }
+
           </NavbarText>
         </NavbarStyle>
       </NavbarBG>
