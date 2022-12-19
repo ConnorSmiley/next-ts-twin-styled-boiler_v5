@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SidebarNavContainer = styled.div`
   ${tw`
@@ -72,26 +73,73 @@ const Blog = styled.div`
     `}
 `;
 
+
+const ProjectsSelected = styled.div`
+  ${tw`
+  px-8
+  -mr-10
+  py-4
+  bg-blue-500
+  
+  hover:cursor-pointer
+  hover:bg-yellow-500
+    `}
+`;
+
+
+const BlogSelected = styled.div`
+  ${tw`
+  px-8
+  -mr-10
+  py-4
+  
+  hover:cursor-pointer
+  hover:bg-yellow-500
+    `}
+`;
+
+
+
 export interface ISidebarNavProps {
 }
 
 const SidebarNav: React.FC<ISidebarNavProps> = () => {
+  const router = useRouter();
+  const currentRoute = router.pathname;
 
   return (
     <>
       <SidebarNavContainer>
         <SidebarNavStyle>
           <SidebarNavText>
-            <Link href="/Projects">
-              <Projects>
-                Projects
-              </Projects>
-            </Link>
-            <Link href="/Blog">
-              <Blog>
-                Blog
-              </Blog>
-            </Link>
+
+            {currentRoute === "Coding/Projects" ?
+              <>
+                  <ProjectsSelected>
+                    Projects
+                  </ProjectsSelected>
+              </>
+              :
+              <>
+                <Link href="Coding/Projects">
+                  <Projects>
+                    Projects
+                  </Projects>
+                </Link>
+              </>
+            }
+
+            {currentRoute === "Coding/Blog" ?
+                <BlogSelected>
+                  Blog
+                </BlogSelected>
+              :
+              <Link href="Coding/Blog">
+                <Blog>
+                  Blog
+                </Blog>
+              </Link>
+            }
           </SidebarNavText>
         </SidebarNavStyle>
       </SidebarNavContainer>

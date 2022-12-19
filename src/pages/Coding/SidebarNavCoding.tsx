@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SidebarNavContainer = styled.div`
   ${tw`
@@ -58,7 +59,7 @@ const Projects = styled.div`
   py-4
   
   hover:cursor-pointer
-  hover:bg-purple-900
+  hover:bg-yellow-500
     `}
 `;
 
@@ -69,32 +70,119 @@ const Blog = styled.div`
   py-4
   
   hover:cursor-pointer
-  hover:bg-purple-900
+  hover:bg-yellow-500
+    `}
+`;
+
+
+const ProjectsSelected = styled.div`
+  ${tw`
+  px-8
+  -mr-10
+  py-4
+  bg-blue-500
+  
+  hover:cursor-pointer
+  hover:bg-yellow-500
+    `}
+`;
+
+
+const BlogSelected = styled.div`
+  ${tw`
+  px-8
+  -mr-10
+  py-4
+  
+  hover:cursor-pointer
+  hover:bg-yellow-500
     `}
 `;
 
 export interface ISidebarNavProps {
-  Projects: any
-  Blog:any
+  Projects: any;
+  Blog: any;
 }
 
 const SidebarNavCoding: React.FC<ISidebarNavProps> = (props) => {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
 
   return (
     <>
       <SidebarNavContainer>
         <SidebarNavStyle>
           <SidebarNavText>
-            <Link href={`${props.Projects}`}>
-              <Projects>
-                Projects
-              </Projects>
-            </Link>
-            <Link href={`${props.Blog}`}>
-              <Blog>
-                {props.Blog}
-              </Blog>
-            </Link>
+
+            {currentRoute === "/Coding" ?
+              <>
+                <Link href="Coding/Projects">
+                  <Projects>
+                    Projects
+                  </Projects>
+                </Link>
+                <Link href="/Coding/Blog">
+                  <Blog>
+                    Blog
+                  </Blog>
+                </Link>
+              </>
+              :
+              <>
+              </>
+            }
+
+            {currentRoute === "/Projects" ?
+              <>
+                <ProjectsSelected>
+                  Projects
+                </ProjectsSelected>
+                <Link href="/Coding/Blog">
+                  <Blog>
+                    Blog
+                  </Blog>
+                </Link>
+              </>
+              :
+              <>
+                <Link href="Coding/Projects">
+                  <Projects>
+                    Projects
+                  </Projects>
+                </Link>
+                <Blog>
+                  Blog
+                </Blog>
+              </>
+            }
+
+            {currentRoute === "/Blog" ?
+              <>
+                <Link href="/Coding/Projects">
+                  <ProjectsSelected>
+                    Projects
+                  </ProjectsSelected>
+                </Link>
+                <Blog>
+                  Blog
+                </Blog>
+              </>
+              :
+              <>
+                <Projects>
+                  Projects
+                </Projects>
+                <Link href="Coding/Blog">
+                  <Blog>
+                    Blog
+                  </Blog>
+                </Link>
+
+              </>
+            }
+
+
           </SidebarNavText>
         </SidebarNavStyle>
       </SidebarNavContainer>

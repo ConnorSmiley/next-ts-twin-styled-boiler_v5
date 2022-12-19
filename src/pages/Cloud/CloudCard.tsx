@@ -32,7 +32,8 @@ const CardContainer = styled.div`
   flex
   flex-col
   w-full
-  
+  bg-gray-700
+
   // sm:h-20
   // md:h-20
   // lg:h-20
@@ -55,7 +56,7 @@ const Title = styled.div`
     text-xl
     uppercase
     font-bold
-    text-black
+    text-white
     flex
     items-center
     justify-center
@@ -67,7 +68,7 @@ const Title = styled.div`
     sm:text-xl
     md:text-xl
     lg:text-lg
-    xl:text-2xl
+    xl:text-3xl
     
     `}
 `;
@@ -93,6 +94,7 @@ const ContentContainer = styled.div`
   ${tw`
     px-3
     text-base
+    text-white
     font-normal
     justify-center
     text-center
@@ -105,7 +107,8 @@ const ContentContainer = styled.div`
    
    sm:text-xl
    lg:text-base
-   xl:text-xl
+   xl:text-2xl
+   xl:font-semibold
    xl:pb-24
    
    `}
@@ -130,11 +133,12 @@ const Date = styled.div`
     flex
     justify-center
     font-bold
-    font-thin
+    font-normal
     text-sm
     absolute
     bottom-6
-    left-3
+    left-6
+    text-white
     
     sm:text-sm
     sm:mt-2
@@ -167,6 +171,7 @@ const ButtonClick = styled.div`
     absolute
     right-6
     bottom-4
+    text-white
     hover:bg-pink-500
     
     hover:bg-pink-500
