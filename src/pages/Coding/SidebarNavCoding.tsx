@@ -87,7 +87,6 @@ const ProjectsSelected = styled.div`
     `}
 `;
 
-
 const BlogSelected = styled.div`
   ${tw`
   px-8
