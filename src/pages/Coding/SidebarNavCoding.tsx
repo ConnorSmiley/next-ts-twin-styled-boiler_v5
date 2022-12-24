@@ -103,10 +103,9 @@ export interface ISidebarNavProps {
   Blog: any;
 }
 
-const SidebarNavCoding: React.FC<ISidebarNavProps> = (props) => {
+const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
-
 
   return (
     <>
