@@ -207,19 +207,19 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
             <CardContainer>
               <CardStyle>
                 <Title>
-                  {posts.title}
+                  {posts?.title}
                 </Title>
                 <div>
-                  <PictureContainer src={posts.img} />
+                  <PictureContainer src={posts?.img} />
                 </div>
                 <ContentContainer>
-                  {posts.content}
+                  {posts?.content}
                 </ContentContainer>
                 <Date>
-                  {posts.TimeStamp.slice(0, -9)}
+                  {posts?.TimeStamp.slice(0, -9)}
                 </Date>
                 <ButtonContainer>
-                  <Link key={posts.id} href={`Cloud/${posts.id}`}>
+                  <Link key={posts?.id} href={`Cloud/${posts?.id}`}>
                     <ButtonClick>
                         Click
                     </ButtonClick>

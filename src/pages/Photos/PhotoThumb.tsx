@@ -80,7 +80,7 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({data}) => {
     return(
        <>
         <PhotoThumbContainer>
-            <PhotoImage src={data.url}/>
+            <PhotoImage src={data?.url}/>
 
             <HoverContainer>
                 <HoverThumbTitle>

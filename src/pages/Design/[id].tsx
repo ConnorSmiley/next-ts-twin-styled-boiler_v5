@@ -61,5 +61,4 @@ export const getStaticProps = async ({ params: { id } }) => {
     };
 };
 
-
 export default DesignID

@@ -73,6 +73,7 @@ export interface IDesignProps {
 }
 
 const Photos: React.FC<IDesignProps> = ({ pic }) => {
+
   return (
     <>
       <PhotosContainer>
@@ -80,6 +81,7 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
         <PhotosStyle>
           <GridWidth>
             <MainGrid>
+
               {pic.map((data: any) => (
                   <PhotoThumb data={data} />
               ))}

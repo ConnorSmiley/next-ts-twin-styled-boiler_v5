@@ -69,7 +69,6 @@ const HoverThumbDescription = styled.div`
   md:text-xl
   lg:text-2xl
   xl:text-3xl
-
     
     `}
 `;
@@ -84,14 +83,14 @@ const DesignThumb: React.FC<IDesignThumbProps> = ({ data }) => {
     <>
       <DesignThumbContainer>
 
-        <DesignThumbStyle src={data.url} />
+        <DesignThumbStyle src={data?.url} />
 
           <HoverContainer>
             <HoverThumbTitle>
-              {data.Company}
+              {data?.Company}
             </HoverThumbTitle>
             <HoverThumbDescription>
-              {data.ThumbDescription}
+              {data?.ThumbDescription}
             </HoverThumbDescription>
           </HoverContainer>
 
