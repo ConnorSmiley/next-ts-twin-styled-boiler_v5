@@ -17,7 +17,7 @@ const CloudCardContainer = styled.div`
 const CloudCardStyle = styled.div`
   ${tw`
   w-[80%]
-  h-52
+  h-40
   border
   border-red-500
   
@@ -29,7 +29,6 @@ const CardContainer = styled.div`
   flex
   items-center
   justify-center
-  h-full
     `}
 `;
 
@@ -88,7 +87,6 @@ const ContentContainer = styled.div`
     overflow-hidden
     h-6
     w-full
-    pb-20
    
    sm:text-xl
    lg:text-base
@@ -167,35 +165,35 @@ export interface IProps {
 }
 
 const CloudCard: React.FC<IProps> = ({ posts }) => {
-console.log(posts)
 
   return (
     <>
       <CloudCardContainer>
         <CloudCardStyle>
-            <PictureContainer src={posts?.img} />
-
           <CardContainer>
-              <CardStyle>
-                <Title>
-                  {posts?.title}
-                </Title>
-                <ContentContainer>
-                  {posts?.content}
-                </ContentContainer>
-                <Date>
-                  {posts?.TimeStamp.slice(0, -10)}
-                </Date>
-                <ButtonContainer>
-                  <Link key={posts?.id} href={`Cloud/${posts?.id}`}>
-                    <ButtonClick>
-                        Click
-                    </ButtonClick>
-                  </Link>
-                </ButtonContainer>
 
-              </CardStyle>
-            </CardContainer>
+            <PictureContainer src={posts.img} />
+
+            <CardStyle>
+              <Title>
+                {posts.title}
+              </Title>
+              <ContentContainer>
+                {posts.content}
+              </ContentContainer>
+              <Date>
+                {posts.TimeStamp.slice(0, -10)}
+              </Date>
+              <ButtonContainer>
+                <Link key={posts.id} href={`Cloud/${posts.id}`}>
+                  <ButtonClick>
+                    Click
+                  </ButtonClick>
+                </Link>
+              </ButtonContainer>
+
+            </CardStyle>
+          </CardContainer>
         </CloudCardStyle>
       </CloudCardContainer>
     </>
