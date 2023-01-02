@@ -18,10 +18,7 @@ const CloudContainer = styled.div`
 const DarkBackground = styled.div`
   ${tw`
     pt-16
-    h-full
     w-[98%]
-    flex
-    justify-center
     px-2
     
     sm:px-20
@@ -32,16 +29,9 @@ const DarkBackground = styled.div`
 
 const CloudStyle = styled.div`
   ${tw`
-  w-full
   h-auto
   m-5
-  grid
-  grid-cols-1
-  gap-2
   
-  sm:grid-cols-2
-  md:grid-cols-2
-  lg:grid-cols-3
     
     `}
 `;
@@ -68,7 +58,6 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
         <DarkBackground>
 
           <CloudStyle>
-
             {blogPost.reverse().map((posts:any) => (
               <>
                 <CloudCard posts={posts}/>
@@ -78,7 +67,7 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
           </CloudStyle>
         </DarkBackground>
       </CloudContainer>
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 };

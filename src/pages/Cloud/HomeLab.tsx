@@ -19,7 +19,6 @@ export default function HomeLab () {
     <>
         <HomeLabContainer>
             <HomeLabStyle>
-              jdfjd
 
             </HomeLabStyle>
         </HomeLabContainer>

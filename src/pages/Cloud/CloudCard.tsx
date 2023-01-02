@@ -7,45 +7,34 @@ import Link from "next/link";
 const CloudCardContainer = styled.div`
   ${tw`
     w-full
-    h-auto
+    h-full
+    flex
+    justify-center
+    
     `}
 `;
 
 const CloudCardStyle = styled.div`
   ${tw`
-  // grid
-  // grid-cols-1
-  // gap-2
-  //
-  // sm:grid-cols-2
-  // md:grid-cols-2
-  // lg:grid-cols-3
+  w-[80%]
+  h-52
+  border
+  border-red-500
+  
     `}
 `;
 
 const CardContainer = styled.div`
   ${tw`
-  bg-gray-100
-  rounded-md
-  aspect-w-1
-  aspect-h-1
   flex
-  flex-col
-  w-full
-  bg-gray-700
-
-  // sm:h-20
-  // md:h-20
-  // lg:h-20
-  // xl:h-80
+  items-center
+  justify-center
+  h-full
     `}
 `;
 
 const CardStyle = styled.div`
   ${tw`
-    flex-col
-    justify-center
-    h-full
     
     `}
 `;
@@ -57,9 +46,6 @@ const Title = styled.div`
     uppercase
     font-bold
     text-white
-    flex
-    items-center
-    justify-center
     text-center
     pt-2
     px-2
@@ -78,7 +64,8 @@ const PictureContainer = styled.img`
   ${tw`
   w-full
   h-full
-  mx-auto
+  object-contain
+  p-2
   
   sm:w-40
   md:w-40
@@ -101,8 +88,6 @@ const ContentContainer = styled.div`
     overflow-hidden
     h-6
     w-full
-    absolute
-    bottom-0
     pb-20
    
    sm:text-xl
@@ -120,8 +105,6 @@ const ButtonContainer = styled.div`
     items-center
     justify-center
     pt-2
-    absolute
-    bottom-0
     pb-4
     w-full
     
@@ -135,7 +118,6 @@ const Date = styled.div`
     font-bold
     font-normal
     text-sm
-    absolute
     bottom-6
     left-6
     text-white
@@ -168,9 +150,6 @@ const ButtonClick = styled.div`
     border-2
     border-pink-500
     text-sm
-    absolute
-    right-6
-    bottom-4
     text-white
     hover:bg-pink-500
     
@@ -183,40 +162,29 @@ const ButtonClick = styled.div`
     `}
 `;
 
-export const getStaticProps = async () => {
-  const { data: blogPost } = await supabase.from("BlogPosts").select("id");
-  return {
-    props: {
-      blogPost
-    }
-  };
-};
-
 export interface IProps {
   posts: any;
-
 }
 
 const CloudCard: React.FC<IProps> = ({ posts }) => {
+console.log(posts)
 
   return (
     <>
       <CloudCardContainer>
         <CloudCardStyle>
-          <>
-            <CardContainer>
+            <PictureContainer src={posts?.img} />
+
+          <CardContainer>
               <CardStyle>
                 <Title>
                   {posts?.title}
                 </Title>
-                <div>
-                  <PictureContainer src={posts?.img} />
-                </div>
                 <ContentContainer>
                   {posts?.content}
                 </ContentContainer>
                 <Date>
-                  {posts?.TimeStamp.slice(0, -9)}
+                  {posts?.TimeStamp.slice(0, -10)}
                 </Date>
                 <ButtonContainer>
                   <Link key={posts?.id} href={`Cloud/${posts?.id}`}>
@@ -225,12 +193,21 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
                     </ButtonClick>
                   </Link>
                 </ButtonContainer>
+
               </CardStyle>
             </CardContainer>
-          </>
         </CloudCardStyle>
       </CloudCardContainer>
     </>
   );
 };
 export default CloudCard;
+
+export const getStaticProps = async () => {
+  const { data: blogPost } = await supabase.from("BlogPosts").select("id");
+  return {
+    props: {
+      blogPost
+    }
+  };
+};
