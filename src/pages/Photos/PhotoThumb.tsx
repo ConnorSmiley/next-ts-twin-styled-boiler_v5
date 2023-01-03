@@ -1,32 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import tw from "twin.macro"
+import tw from "twin.macro";
 
 const PhotoThumbContainer = styled.div`
-    ${tw`
+  ${tw`
     aspect-w-8
     aspect-h-8
     w-full
     h-full
     
     `}
-`
-
-const PhotoThumbStyle = styled.div`
-    ${tw`
-    object-cover
-
-    `}
-`
+`;
 
 const PhotoImage = styled.img`
-    ${tw`
+  ${tw`
     object-cover
 
     hover:cursor-pointer
     hover:bg-black
     `}
-`
+`;
 
 const HoverContainer = styled.div`
   ${tw`
@@ -72,26 +65,26 @@ const HoverThumbTitle = styled.div`
 
 
 export interface IPhotoThumbProps {
-    data:any
+  data: any;
 }
 
-const PhotoThumb: React.FC<IPhotoThumbProps> = ({data}) => {
-
-    return(
-       <>
-        <PhotoThumbContainer>
-            <PhotoImage src={data?.url}/>
-
-            <HoverContainer>
-                <HoverThumbTitle>
-                  Click
+const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data }) => {
+  const [slider, setSlider] = useState<boolean>(false)
+  const [id, setId] = useState<number>(0)
 
 
-                </HoverThumbTitle>
-            </HoverContainer>
-        </PhotoThumbContainer>
-       </>
-    )
-}
+  return (
+    <>
+      <PhotoThumbContainer>
+        <PhotoImage src={data?.url} />
+        <HoverContainer>
+          <HoverThumbTitle>
+            Click
+          </HoverThumbTitle>
+        </HoverContainer>
+      </PhotoThumbContainer>
+    </>
+  );
+};
 
-export default PhotoThumb
+export default PhotoThumb;

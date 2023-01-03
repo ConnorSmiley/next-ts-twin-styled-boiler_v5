@@ -18,8 +18,9 @@ const CloudContainer = styled.div`
 const DarkBackground = styled.div`
   ${tw`
     pt-16
-    w-[98%]
     px-2
+    flex
+    justify-center
     
     sm:px-20
     sm:pt-4
@@ -31,6 +32,10 @@ const CloudStyle = styled.div`
   ${tw`
   h-auto
   m-5
+  overflow-hidden
+  flex
+  flex-col
+  justify-center
     
     `}
 `;

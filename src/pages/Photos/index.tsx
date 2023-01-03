@@ -70,9 +70,10 @@ export const getStaticProps = async () => {
 export interface IDesignProps {
   pic: any;
   data: any;
+  idx:number
 }
 
-const Photos: React.FC<IDesignProps> = ({ pic }) => {
+const Photos: React.FC<IDesignProps> = ({ pic  }) => {
 
   return (
     <>
@@ -82,8 +83,8 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
           <GridWidth>
             <MainGrid>
 
-              {pic.map((data: any) => (
-                  <PhotoThumb data={data} />
+              {pic.map((data: any, idx : any) => (
+                  <PhotoThumb data={data} idx={idx} />
               ))}
 
             </MainGrid>

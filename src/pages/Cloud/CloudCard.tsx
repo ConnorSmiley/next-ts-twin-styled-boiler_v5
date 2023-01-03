@@ -6,25 +6,25 @@ import Link from "next/link";
 
 const CloudCardContainer = styled.div`
   ${tw`
-    w-full
+    w-[60rem]
     h-full
     flex
     justify-center
     cursor-pointer
+    overflow-hidden
     
     `}
 `;
 
 const CloudCardStyle = styled.div`
   ${tw`
-  w-[80%]
+  w-full
   h-[270px]
   flex
   border-b-2
   border-gray-500
   pb-8
   my-4
-  
   
     `}
 `;
@@ -52,7 +52,7 @@ const Title = styled.div`
     text-white
     text-center
     flex
-    pt-1
+    pt-2
 
     sm:text-xl
     md:text-xl
@@ -102,17 +102,6 @@ const ContentContainer = styled.div`
    `}
 `;
 
-const ButtonContainer = styled.div`
-  ${tw`
-    flex
-    items-center
-    justify-center
-    pt-2
-    pb-4
-    w-full
-    
-    `}
-`;
 
 const Date = styled.div`
   ${tw`
@@ -138,9 +127,20 @@ const Date = styled.div`
     `}
 `;
 
+const ButtonContainer = styled.div`
+  ${tw`
+  flex
+  justify-end
+  pt-3
+  pr-3
+  w-full
+   
+    `}
+`;
+
 const ButtonClick = styled.div`
   ${tw`
-  w-20
+  w-40
   h-8
   rounded-md
   font-bold
@@ -159,7 +159,6 @@ const ButtonClick = styled.div`
     cursor-pointer
     
     sm:h-8
-    sm:w-20
     md:right-4
     `}
 `;
@@ -177,34 +176,37 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
 
         <CloudCardStyle>
 
-          <CardContainer>
-            <PictureContainer src={posts.img} />
-          </CardContainer>
+
+            <CardContainer>
+              <PictureContainer src={posts.img} />
+            </CardContainer>
 
 
-          <CardStyle>
-            <Date>
-              {posts.TimeStamp.slice(0, -16)}
-            </Date>
+            <CardStyle>
+              <Date>
+                {posts.TimeStamp.slice(0, -16)}
+              </Date>
 
-            <Title>
-              {posts.title}
-            </Title>
-            <ContentContainer>
-              {posts.content}
-            </ContentContainer>
+              <Title>
+                {posts.title}
+              </Title>
+              <ContentContainer>
+                {posts.content}
+              </ContentContainer>
 
-            {/*<ButtonContainer>*/}
-            {/*    <ButtonClick>*/}
-            {/*      Click*/}
-            {/*    </ButtonClick>*/}
-            {/*</ButtonContainer>*/}
+              <ButtonContainer>
+                <ButtonClick>
+                  Click
+                </ButtonClick>
+              </ButtonContainer>
 
-          </CardStyle>
+            </CardStyle>
+
+
         </CloudCardStyle>
-      </Link>
+        </Link>
 
-    </CloudCardContainer>
+      </CloudCardContainer>
     </>
   );
 };
