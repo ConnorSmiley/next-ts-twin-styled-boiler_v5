@@ -31,7 +31,6 @@ const CloudStyle = styled.div`
   ${tw`
   h-auto
   m-5
-  
     
     `}
 `;
@@ -57,7 +56,6 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
     </>
   ))
 
-
   return (
     <>
       <CloudContainer>
@@ -66,11 +64,10 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
           <CloudStyle>
             {filteredBlog}
-
           </CloudStyle>
-        </DarkBackground>
-        {/*<Footer />*/}
 
+        </DarkBackground>
+        <Footer />
       </CloudContainer>
     </>
   );

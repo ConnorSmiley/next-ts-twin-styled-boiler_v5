@@ -10,6 +10,7 @@ const CloudCardContainer = styled.div`
     h-full
     flex
     justify-center
+    cursor-pointer
     
     `}
 `;
@@ -17,23 +18,28 @@ const CloudCardContainer = styled.div`
 const CloudCardStyle = styled.div`
   ${tw`
   w-[80%]
-  h-40
-  border
-  border-red-500
+  h-[270px]
+  flex
+  border-b-2
+  border-gray-500
+  pb-8
+  my-4
+  
   
     `}
 `;
 
 const CardContainer = styled.div`
   ${tw`
-  flex
-  items-center
-  justify-center
+  bg-black
+  
     `}
 `;
 
 const CardStyle = styled.div`
   ${tw`
+  bg-black
+  w-full
     
     `}
 `;
@@ -42,35 +48,35 @@ const Title = styled.div`
   ${tw`
     text-white
     text-xl
-    uppercase
     font-bold
     text-white
     text-center
-    pt-2
-    px-2
+    flex
+    pt-1
 
-    sm:pt-4
     sm:text-xl
     md:text-xl
     lg:text-lg
     xl:text-3xl
-    
     `}
 `;
-
 
 const PictureContainer = styled.img`
   ${tw`
   w-full
   h-full
+  left-0
   object-contain
   p-2
+  rounded-lg
+  flex
+  items-center
+  justify-center
   
   sm:w-40
   md:w-40
   lg:w-60
   xl:w-80
-  
     `}
 `;
 
@@ -78,20 +84,19 @@ const ContentContainer = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   ${tw`
-    px-3
-    text-base
     text-white
-    font-normal
-    justify-center
     text-center
+    pt-2
+    flex
     overflow-hidden
     h-6
     w-full
+    font-light
    
    sm:text-xl
    lg:text-base
    xl:text-2xl
-   xl:font-semibold
+   xl:font-light
    xl:pb-24
    
    `}
@@ -111,14 +116,12 @@ const ButtonContainer = styled.div`
 
 const Date = styled.div`
   ${tw`
-    flex
-    justify-center
     font-bold
     font-normal
-    text-sm
+    text-lg
     bottom-6
-    left-6
     text-white
+    font-light
     
     sm:text-sm
     sm:mt-2
@@ -128,7 +131,8 @@ const Date = styled.div`
     lg:mt-1
     lg:pb-0
     lg:bottom-5
-    xl:text-lg
+    xl:text-xl
+    xl:font-thin
     xl:bottom-4
 
     `}
@@ -169,33 +173,38 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
   return (
     <>
       <CloudCardContainer>
+        <Link key={posts.id} href={`Cloud/${posts.id}`}>
+
         <CloudCardStyle>
+
           <CardContainer>
-
             <PictureContainer src={posts.img} />
-
-            <CardStyle>
-              <Title>
-                {posts.title}
-              </Title>
-              <ContentContainer>
-                {posts.content}
-              </ContentContainer>
-              <Date>
-                {posts.TimeStamp.slice(0, -10)}
-              </Date>
-              <ButtonContainer>
-                <Link key={posts.id} href={`Cloud/${posts.id}`}>
-                  <ButtonClick>
-                    Click
-                  </ButtonClick>
-                </Link>
-              </ButtonContainer>
-
-            </CardStyle>
           </CardContainer>
+
+
+          <CardStyle>
+            <Date>
+              {posts.TimeStamp.slice(0, -16)}
+            </Date>
+
+            <Title>
+              {posts.title}
+            </Title>
+            <ContentContainer>
+              {posts.content}
+            </ContentContainer>
+
+            {/*<ButtonContainer>*/}
+            {/*    <ButtonClick>*/}
+            {/*      Click*/}
+            {/*    </ButtonClick>*/}
+            {/*</ButtonContainer>*/}
+
+          </CardStyle>
         </CloudCardStyle>
-      </CloudCardContainer>
+      </Link>
+
+    </CloudCardContainer>
     </>
   );
 };
