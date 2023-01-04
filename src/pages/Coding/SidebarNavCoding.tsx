@@ -113,72 +113,15 @@ const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
         <SidebarNavStyle>
           <SidebarNavText>
 
-            {currentRoute === "/Coding" ?
-              <>
-                <Link href="Coding/Projects">
-                  <Projects>
-                    Projects
-                  </Projects>
-                </Link>
-                <Link href="/Coding/Blog">
-                  <Blog>
-                    Blog
-                  </Blog>
-                </Link>
-              </>
-              :
-              <>
-              </>
-            }
+            <Link href={`${blog}`}>
+              <Blog>
+                Blog
+              </Blog>
+            </Link>
 
-            {currentRoute === "/Projects" ?
-              <>
-                <ProjectsSelected>
-                  Projects
-                </ProjectsSelected>
-                <Link href="/Coding/Blog">
-                  <Blog>
-                    Blog
-                  </Blog>
-                </Link>
-              </>
-              :
-              <>
-                <Link href="Coding/Projects">
-                  <Projects>
-                    Projects
-                  </Projects>
-                </Link>
-                <Blog>
-                  Blog
-                </Blog>
-              </>
-            }
-
-            {currentRoute === "/Blog" ?
-              <>
-                <Link href="/Coding/Projects">
-                  <ProjectsSelected>
-                    Projects
-                  </ProjectsSelected>
-                </Link>
-                <Blog>
-                  Blog
-                </Blog>
-              </>
-              :
-              <>
-                <Projects>
-                  Projects
-                </Projects>
-                <Link href="Coding/Blog">
-                  <Blog>
-                    Blog
-                  </Blog>
-                </Link>
-
-              </>
-            }
+            <Projects>
+              Projects
+            </Projects>
 
 
           </SidebarNavText>
